@@ -1,0 +1,359 @@
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.exe
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.deps.json
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.runtimeconfig.json
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.pdb
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.Properties.Resources.resources
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.csproj.GenerateResource.cache
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.AssemblyInfoInputs.cache
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.AssemblyInfo.cs
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.csproj.CoreCompileInputs.cache
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.dll
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\refint\WinFormsApp12.dll
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.pdb
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.genruntimeconfig.cache
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\ref\WinFormsApp12.dll
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.ClubsForm.resources
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.Main_Form.resources
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.LeagueTableForm.resources
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.MatchesForm.resources
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.PlayersForm.resources
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.RefereesForm.resources
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.StadiumsForm.resources
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.csproj.AssemblyReference.cache
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\google\source\repos\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\google\source\repos\WinFormsApp12\obj\Debug\net8.0-windows\WinForms.EEC3A1E2.Up2Date
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.exe
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.deps.json
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.runtimeconfig.json
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.pdb
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.csproj.AssemblyReference.cache
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.ClubsForm.resources
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.LeagueTableForm.resources
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.Main_Form.resources
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.MatchesForm.resources
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.PlayersForm.resources
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.Properties.Resources.resources
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.RefereesForm.resources
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.StadiumsForm.resources
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.csproj.GenerateResource.cache
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.AssemblyInfoInputs.cache
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.AssemblyInfo.cs
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.csproj.CoreCompileInputs.cache
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinForms.EEC3A1E2.Up2Date
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\refint\WinFormsApp12.dll
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.pdb
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.genruntimeconfig.cache
+C:\Users\google\OneDrive\Desktop\WinFormsApp12\obj\Debug\net8.0-windows\ref\WinFormsApp12.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.exe
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.deps.json
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.runtimeconfig.json
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\WinFormsApp12.pdb
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\System.ClientModel.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+D:\study\data basa\WinFormsApp12\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.csproj.AssemblyReference.cache
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.ClubsForm.resources
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.LeagueTableForm.resources
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.Main_Form.resources
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.MatchesForm.resources
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.PlayersForm.resources
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.Properties.Resources.resources
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.RefereesForm.resources
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.StadiumsForm.resources
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.csproj.GenerateResource.cache
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.AssemblyInfoInputs.cache
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.AssemblyInfo.cs
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.csproj.CoreCompileInputs.cache
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinForms.EEC3A1E2.Up2Date
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.dll
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\refint\WinFormsApp12.dll
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.pdb
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\WinFormsApp12.genruntimeconfig.cache
+D:\study\data basa\WinFormsApp12\obj\Debug\net8.0-windows\ref\WinFormsApp12.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\WinFormsApp12.exe
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\WinFormsApp12.deps.json
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\WinFormsApp12.runtimeconfig.json
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\WinFormsApp12.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\WinFormsApp12.pdb
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\System.ClientModel.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+D:\study\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.csproj.AssemblyReference.cache
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.ClubsForm.resources
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.LeagueTableForm.resources
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.Main_Form.resources
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.MatchesForm.resources
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.PlayersForm.resources
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.Properties.Resources.resources
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.RefereesForm.resources
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.StadiumsForm.resources
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.csproj.GenerateResource.cache
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.AssemblyInfoInputs.cache
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.AssemblyInfo.cs
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.csproj.CoreCompileInputs.cache
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinForms.EEC3A1E2.Up2Date
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.dll
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\refint\WinFormsApp12.dll
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.pdb
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.genruntimeconfig.cache
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\ref\WinFormsApp12.dll
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.UpdateStadiumForm.resources
+D:\study\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.UpdateLeagueForm.resources
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\WinFormsApp12.exe
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\WinFormsApp12.deps.json
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\WinFormsApp12.runtimeconfig.json
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\WinFormsApp12.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\WinFormsApp12.pdb
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\System.ClientModel.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+D:\courses\data basa\egyptDB\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.csproj.AssemblyReference.cache
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.ClubsForm.resources
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.LeagueTableForm.resources
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.Main_Form.resources
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.MatchesForm.resources
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.PlayersForm.resources
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.Properties.Resources.resources
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.RefereesForm.resources
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.StadiumsForm.resources
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.UpdateLeagueForm.resources
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.UpdateStadiumForm.resources
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.csproj.GenerateResource.cache
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.GeneratedMSBuildEditorConfig.editorconfig
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.AssemblyInfoInputs.cache
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.AssemblyInfo.cs
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.csproj.CoreCompileInputs.cache
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinForms.EEC3A1E2.Up2Date
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.dll
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\refint\WinFormsApp12.dll
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.pdb
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\WinFormsApp12.genruntimeconfig.cache
+D:\courses\data basa\egyptDB\obj\Debug\net8.0-windows\ref\WinFormsApp12.dll

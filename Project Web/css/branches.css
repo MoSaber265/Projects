@@ -1,0 +1,719 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background-color: #f7f2ed;
+    color: #3a2c27;
+    line-height: 1.6;
+}
+.header {
+            background-color: #5a3e2b;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+.header h1 {
+    font-family: Georgia, serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #e0c28d;
+        }
+        
+        /* Sticky Navigation Bar */
+.sticky-nav {
+            background-color: #205ea9;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+             transition: all 0.3s ease; 
+        }
+.sticky-nav.scrolled {
+            padding: 10px 0;
+            background-color: rgba(22, 115, 177, 0.95);
+        }
+        
+.nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+.nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+    
+            font-weight: 500;
+        }
+        
+.nav-links a:hover {
+            background-color: rgb(188, 97, 22);
+            
+        }
+        
+.nav-links a.active {
+            background-color: #e0c28d;
+            color: #5a3e2b;
+        }
+
+/* ===== Header Section ===== */
+.locations-header {
+    text-align: center;
+    padding: 60px 0 20px;
+}
+
+.locations-header h1 {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.locations-header p {
+    font-size: 15px;
+    color: #826f65;
+}
+
+/* ===== Map Box ===== */
+.map-box {
+    width: 75%;
+    margin: 0 auto;
+    background: #efe7df;
+    padding: 60px 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e2d6ce;
+}
+
+.map-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.map-box h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.map-box p {
+    font-size: 14px;
+    color: #7b6a61;
+}
+
+/* ===== Locations Cards ===== */
+.locations-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    perspective: 1000px;
+}
+
+.location-card {
+    background: linear-gradient(145deg, #ffffff 0%, #fcfaf7 100%);
+    padding: 30px 25px;
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid rgba(160, 111, 66, 0.15);
+    box-shadow: 
+        0 6px 25px rgba(59, 41, 29, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* خط علوي ملون */
+.location-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #a06f42, #c9a87a);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+/* أيقونة موقع في الخلفية */
+.location-card::after {
+    content: "📍";
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: rgba(160, 111, 66, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* أيقونة في أعلى الكارت */
+.location-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #f5eee6 0%, #e8d4b5 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #a06f42;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 5px 15px rgba(160, 111, 66, 0.15);
+    transition: all 0.4s ease;
+}
+
+.location-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #3b291d;
+    font-family: 'Georgia', serif;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    position: relative;
+    padding-bottom: 12px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+/* خط تحت العنوان */
+.location-card h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #a06f42, #c9a87a);
+    border-radius: 1px;
+    transition: width 0.3s ease;
+}
+
+.location-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #5a4a3d;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+    flex-grow: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* أيقونة للعنوان الثانوي */
+.location-card p::before {
+    content: "📍";
+    font-size: 1.2rem;
+    color: #a06f42;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.location-card ul {
+    margin-left: 0;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    list-style: none;
+    flex-grow: 1;
+    padding: 0;
+}
+
+.location-card li {
+    margin-bottom: 12px;
+    color: #5a4a3d;
+    position: relative;
+    padding-left: 35px;
+    transition: all 0.3s ease;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* أيقونات مختلفة للعناصر */
+.location-card li:nth-child(1)::before {
+    content: "⏰";
+    color: #a06f42;
+}
+
+.location-card li:nth-child(2)::before {
+    content: "📅";
+    color: #a06f42;
+}
+
+.location-card li:nth-child(3)::before {
+    content: "📞";
+    color: #a06f42;
+}
+
+.location-card li:nth-child(4)::before {
+    content: "🅿️";
+    color: #a06f42;
+}
+
+.location-card li:nth-child(5)::before {
+    content: "⭐";
+    color: #a06f42;
+}
+
+/* أيقونة قبل كل عنصر في القائمة */
+.location-card li::before {
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    width: 25px;
+    text-align: center;
+}
+
+/* ميزات إضافية مع علامات صح */
+.features-list {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(160, 111, 66, 0.2);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: #5a4a3d;
+    font-size: 0.9rem;
+}
+
+/* علامة صح خضراء */
+.check-mark {
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* علامات نجمة للتصنيف */
+.rating-stars {
+    display: flex;
+    gap: 3px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.star {
+    color: #FFD700;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/* زر احتياطي مع أيقونة */
+.reserve-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(160, 111, 66, 0.1) 0%, rgba(201, 168, 122, 0.08) 100%);
+    color: #a06f42;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid rgba(160, 111, 66, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.reserve-btn::before {
+    content: "📅";
+    font-size: 1.1rem;
+}
+
+.reserve-btn:hover {
+    background: linear-gradient(135deg, rgba(160, 111, 66, 0.15) 0%, rgba(201, 168, 122, 0.12) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(160, 111, 66, 0.15);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(160, 111, 66, 0.3), 
+        transparent
+    );
+    margin: 20px 0;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* تأثيرات hover */
+.location-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(2deg);
+    box-shadow: 
+        0 20px 50px rgba(59, 41, 29, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    border-color: rgba(160, 111, 66, 0.25);
+}
+
+.location-card:hover::before {
+    transform: scaleX(1);
+}
+
+.location-card:hover::after {
+    transform: scale(1.2) rotate(15deg);
+    color: rgba(160, 111, 66, 0.12);
+}
+
+.location-card:hover .location-icon {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 8px 20px rgba(160, 111, 66, 0.25);
+}
+
+.location-card:hover h3::after {
+    width: 60px;
+}
+
+.location-card:hover li::before {
+    transform: scale(1.1);
+}
+
+.location-card:hover .check-mark {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 3px 8px rgba(76, 175, 80, 0.4);
+}
+
+.location-card:hover .star {
+    transform: scale(1.2);
+    animation: starTwinkle 0.6s ease infinite alternate;
+}
+
+@keyframes starTwinkle {
+    0% { opacity: 0.8; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* تأثيرات الضغط (Click) */
+.location-card:active {
+    animation: cardPress 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes cardPress {
+    0% {
+        transform: translateY(-10px) scale(1);
+        box-shadow: 
+            0 20px 50px rgba(59, 41, 29, 0.15),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    }
+    50% {
+        transform: translateY(-5px) scale(0.98);
+        box-shadow: 
+            0 10px 30px rgba(59, 41, 29, 0.2),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+        transform: translateY(-10px) scale(1);
+        box-shadow: 
+            0 20px 50px rgba(59, 41, 29, 0.15),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    }
+}
+
+/* تأثير اهتزاز بعد الضغط */
+.location-card.clicked {
+    animation: cardShake 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes cardShake {
+    0%, 100% { transform: translateY(-10px) rotate(0deg); }
+    10%, 30%, 50%, 70%, 90% { transform: translateY(-10px) rotate(-1deg); }
+    20%, 40%, 60%, 80% { transform: translateY(-10px) rotate(1deg); }
+}
+
+/* تأثير إضاءة عند الضغط */
+.location-card:active::before {
+    background: linear-gradient(90deg, 
+        #a06f42, 
+        #c9a87a, 
+        #ffd8a6, 
+        #c9a87a, 
+        #a06f42
+    );
+    background-size: 200% 100%;
+    animation: pressShimmer 0.3s linear;
+}
+
+@keyframes pressShimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
+}
+
+/* تأثير ظهور متتالي */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px) rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+.location-card {
+    animation: cardAppear 0.6s ease forwards;
+    opacity: 0;
+}
+
+.location-card:nth-child(1) { animation-delay: 0.1s; }
+.location-card:nth-child(2) { animation-delay: 0.2s; }
+.location-card:nth-child(3) { animation-delay: 0.3s; }
+
+
+/* ===== Buttons ===== */
+.btn {
+    display: block;
+    width: 100%;
+    background: #f4773c;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #d66632;
+}
+
+.reserve {
+    width: auto;
+    padding: 8px 20px;
+    margin-top: 15px;
+}
+
+/* ===== Footer Cards ===== */
+.footer-boxes {
+    width: 75%;
+    margin: 30px auto 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-card {
+    background: #ffffff;
+    padding: 25px;
+    width: 48%;
+    border: 1px solid #e2d6ce;
+    border-radius: 8px;
+}
+
+.footer-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-card p {
+    font-size: 14px;
+    color: #6e5c53;
+}
+/* ===== FOOTER STYLE (MATCHING YOUR IMAGE EXACTLY) ===== */
+
+.footer {
+    background-color: #3b291d;
+    color: #f0e9e1;
+    padding: 60px 40px 30px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    font-family: 'Georgia', serif;
+    border-top: 5px solid #a06f42;
+    position: relative;
+    min-height: 350px;
+}
+
+/* تأثير خلفية */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23a06f42" opacity="0.03"><path d="M20,20 Q50,5 80,20 T100,50 Q85,80 50,100 T0,50 Q15,20 50,0 T80,20"/></svg>');
+    background-size: 300px;
+    pointer-events: none;
+}
+
+/* كل قسم في الفوتر */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* القسم الأول - La Maison */
+.footer-section:first-child {
+    max-width: 400px;
+}
+
+/* القسم الأول - العنوان */
+.footer-section:first-child h3 {
+    font-size: 1.8rem;
+    color: #f8f4ef;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+/* القسم الأول - النص */
+.footer-section:first-child pre {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #d4c9bc;
+    margin-bottom: 0;
+    white-space: pre-line;
+    font-family: 'Georgia', serif;
+    text-align: left;
+    width: 100%;
+}
+
+/* الأقسام الأخرى */
+.footer-section:not(:first-child) {
+    justify-content: flex-start;
+}
+
+/* العناوين للأقسام الأخرى */
+.footer-section:nth-child(2) h3,
+.footer-section:nth-child(3) h3,
+.footer-section:nth-child(4) h3 {
+    font-size: 1.4rem;
+    color: #f8f4ef;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/* خط تحت العناوين */
+.footer-section:nth-child(2) h3::after,
+.footer-section:nth-child(3) h3::after,
+.footer-section:nth-child(4) h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #a06f42;
+}
+
+/* الروابط في القسم الثاني */
+.footer-section:nth-child(2) ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.footer-section:nth-child(2) ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section:nth-child(2) ul li a {
+    color: #d4c9bc;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.footer-section:nth-child(2) ul li a:hover {
+    color: #a06f42;
+    transform: translateX(5px);
+}
+
+/* النصوص في الأقسام 3 و 4 */
+.footer-section:nth-child(3) pre,
+.footer-section:nth-child(4) pre {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #d4c9bc;
+    margin-bottom: 15px;
+    white-space: pre-line;
+    font-family: 'Georgia', serif;
+    position: relative;
+    padding-left: 20px;
+    width: 100%;
+}
+
+/* أيقونات صغيرة للنصوص */
+.footer-section:nth-child(3) pre::before,
+.footer-section:nth-child(4) pre::before {
+    content: "©";
+    position: absolute;
+    left: 0;
+    color: #a06f42;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* الخط الفاصل */
+.footer hr {
+    grid-column: 1/-1;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #a06f42, transparent);
+    margin: 20px 0 30px 0;
+}
+
+/* حقوق النشر */
+.copyright {
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #c9b8a8;
+    padding-top: 20px;
+    border-top: 1px solid rgba(160, 111, 66, 0.3);
+    margin-top: 10px;
+}

@@ -1,0 +1,183 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\courses\\data basa\\egyptDB\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|d:\\courses\\data basa\\egyptdb\\leaguetableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|solutionrelative:leaguetableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|d:\\courses\\data basa\\egyptdb\\stadiumsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|solutionrelative:stadiumsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|D:\\courses\\data basa\\egyptDB\\stadiumsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|solutionrelative:stadiumsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|d:\\courses\\data basa\\egyptdb\\stadiumsform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|solutionrelative:stadiumsform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|D:\\courses\\data basa\\egyptDB\\leaguetableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|solutionrelative:leaguetableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|d:\\courses\\data basa\\egyptdb\\updatestadiumform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|solutionrelative:updatestadiumform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|d:\\courses\\data basa\\egyptdb\\updateleagueform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|solutionrelative:updateleagueform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|D:\\courses\\data basa\\egyptDB\\updateleagueform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|solutionrelative:updateleagueform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|D:\\courses\\data basa\\egyptDB\\updatestadiumform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|solutionrelative:updatestadiumform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|d:\\courses\\data basa\\egyptdb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467B1492-BE5A-423E-880A-03D54E7493A4}|WinFormsApp12.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\courses\\data basa\\egyptDB\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\courses\\data basa\\egyptDB\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T14:55:15.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UpdateStadiumForm.cs",
+              "DocumentMoniker": "D:\\courses\\data basa\\egyptDB\\UpdateStadiumForm.cs",
+              "RelativeDocumentMoniker": "UpdateStadiumForm.cs",
+              "ToolTip": "D:\\courses\\data basa\\egyptDB\\UpdateStadiumForm.cs",
+              "RelativeToolTip": "UpdateStadiumForm.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwFEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T14:04:59.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LeagueTableForm.cs",
+              "DocumentMoniker": "D:\\courses\\data basa\\egyptDB\\LeagueTableForm.cs",
+              "RelativeDocumentMoniker": "LeagueTableForm.cs",
+              "ToolTip": "D:\\courses\\data basa\\egyptDB\\LeagueTableForm.cs",
+              "RelativeToolTip": "LeagueTableForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T04:37:36.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StadiumsForm.cs [Design]",
+              "DocumentMoniker": "D:\\courses\\data basa\\egyptDB\\StadiumsForm.cs",
+              "RelativeDocumentMoniker": "StadiumsForm.cs",
+              "ToolTip": "D:\\study\\data basa\\egyptDB\\StadiumsForm.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\study\\data basa\\egyptDB\\StadiumsForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T01:08:36.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StadiumsForm.cs",
+              "DocumentMoniker": "D:\\courses\\data basa\\egyptDB\\StadiumsForm.cs",
+              "RelativeDocumentMoniker": "StadiumsForm.cs",
+              "ToolTip": "D:\\courses\\data basa\\egyptDB\\StadiumsForm.cs",
+              "RelativeToolTip": "StadiumsForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAACZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T00:21:03.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LeagueTableForm.cs [Design]",
+              "DocumentMoniker": "D:\\courses\\data basa\\egyptDB\\LeagueTableForm.cs",
+              "RelativeDocumentMoniker": "LeagueTableForm.cs",
+              "ToolTip": "D:\\study\\data basa\\egyptDB\\LeagueTableForm.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\study\\data basa\\egyptDB\\LeagueTableForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T12:41:26.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateLeagueForm.cs",
+              "DocumentMoniker": "D:\\courses\\data basa\\egyptDB\\UpdateLeagueForm.cs",
+              "RelativeDocumentMoniker": "UpdateLeagueForm.cs",
+              "ToolTip": "D:\\courses\\data basa\\egyptDB\\UpdateLeagueForm.cs",
+              "RelativeToolTip": "UpdateLeagueForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T19:41:49.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StadiumsForm.Designer.cs",
+              "DocumentMoniker": "D:\\courses\\data basa\\egyptDB\\StadiumsForm.Designer.cs",
+              "RelativeDocumentMoniker": "StadiumsForm.Designer.cs",
+              "ToolTip": "D:\\courses\\data basa\\egyptDB\\StadiumsForm.Designer.cs",
+              "RelativeToolTip": "StadiumsForm.Designer.cs",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAIwOsAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T15:13:01.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UpdateLeagueForm.cs [Design]",
+              "DocumentMoniker": "D:\\courses\\data basa\\egyptDB\\UpdateLeagueForm.cs",
+              "RelativeDocumentMoniker": "UpdateLeagueForm.cs",
+              "ToolTip": "D:\\study\\data basa\\egyptDB\\UpdateLeagueForm.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\study\\data basa\\egyptDB\\UpdateLeagueForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T16:29:52.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UpdateStadiumForm.cs [Design]",
+              "DocumentMoniker": "D:\\courses\\data basa\\egyptDB\\UpdateStadiumForm.cs",
+              "RelativeDocumentMoniker": "UpdateStadiumForm.cs",
+              "ToolTip": "D:\\study\\data basa\\egyptDB\\UpdateStadiumForm.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\study\\data basa\\egyptDB\\UpdateStadiumForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T14:56:33.253Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

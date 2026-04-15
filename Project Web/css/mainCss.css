@@ -1,0 +1,249 @@
+/* =========================================
+   1. Global Reset & Basic Styles
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   2. Header (Shared)
+========================================= */
+.header {
+    background-color: #5a3e2b; 
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    color: #e0c28d;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   3. Navigation Bar (Shared)
+========================================= */
+.sticky-nav {
+    background-color: #205ea9;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* When scrolled (if needed) */
+.sticky-nav.scrolled {
+    padding: 10px 0;
+    background-color: rgba(22,115,177,0.95);
+}
+
+/* navbar links */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    background-color: rgb(188, 97, 22);
+}
+
+.nav-links a.active {
+    background-color: #e0c28d;
+    color: #5a3e2b;
+}
+
+/* =========================================
+   4. Footer (Shared)
+========================================= */
+.footer {
+    background-color: #3b291d;
+    color: #f0e9e1;
+    padding: 60px 40px 30px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    font-family: 'Georgia', serif;
+    border-top: 5px solid #a06f42;
+    position: relative;
+    min-height: 350px;
+}
+
+/* تأثير خلفية */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23a06f42" opacity="0.03"><path d="M20,20 Q50,5 80,20 T100,50 Q85,80 50,100 T0,50 Q15,20 50,0 T80,20"/></svg>');
+    background-size: 300px;
+    pointer-events: none;
+}
+
+/* كل قسم في الفوتر */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* القسم الأول - La Maison */
+.footer-section:first-child {
+    max-width: 400px;
+}
+
+/* القسم الأول - العنوان */
+.footer-section:first-child h3 {
+    font-size: 1.8rem;
+    color: #f8f4ef;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+/* القسم الأول - النص */
+.footer-section:first-child pre {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #d4c9bc;
+    margin-bottom: 0;
+    white-space: pre-line;
+    font-family: 'Georgia', serif;
+    text-align: left;
+    width: 100%;
+}
+
+/* الأقسام الأخرى */
+.footer-section:not(:first-child) {
+    justify-content: flex-start;
+}
+
+/* العناوين للأقسام الأخرى */
+.footer-section:nth-child(2) h3,
+.footer-section:nth-child(3) h3,
+.footer-section:nth-child(4) h3 {
+    font-size: 1.4rem;
+    color: #f8f4ef;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/* خط تحت العناوين */
+.footer-section:nth-child(2) h3::after,
+.footer-section:nth-child(3) h3::after,
+.footer-section:nth-child(4) h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #a06f42;
+}
+
+/* الروابط في القسم الثاني */
+.footer-section:nth-child(2) ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.footer-section:nth-child(2) ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section:nth-child(2) ul li a {
+    color: #d4c9bc;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.footer-section:nth-child(2) ul li a:hover {
+    color: #a06f42;
+    transform: translateX(5px);
+}
+
+/* النصوص في الأقسام 3 و 4 */
+.footer-section:nth-child(3) pre,
+.footer-section:nth-child(4) pre {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #d4c9bc;
+    margin-bottom: 15px;
+    white-space: pre-line;
+    font-family: 'Georgia', serif;
+    position: relative;
+    padding-left: 20px;
+    width: 100%;
+}
+
+/* أيقونات صغيرة للنصوص */
+.footer-section:nth-child(3) pre::before,
+.footer-section:nth-child(4) pre::before {
+    content: "©";
+    position: absolute;
+    left: 0;
+    color: #a06f42;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* الخط الفاصل */
+.footer hr {
+    grid-column: 1/-1;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #a06f42, transparent);
+    margin: 20px 0 30px 0;
+}
+
+/* حقوق النشر */
+.copyright {
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #c9b8a8;
+    padding-top: 20px;
+    border-top: 1px solid rgba(160, 111, 66, 0.3);
+    margin-top: 10px;
+}
+
+/* تصميم متجاوب */

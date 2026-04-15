@@ -1,0 +1,831 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6rem;
+}
+
+/* Header */
+.header {
+            background-color: #5a3e2b;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+.header h1 {
+    font-family: Georgia, serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #e0c28d;
+        }
+        
+        /* Sticky Navigation Bar */
+.sticky-nav {
+            background-color: #205ea9;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+             transition: all 0.3s ease; 
+        }
+.sticky-nav.scrolled {
+            padding: 10px 0;
+            background-color: rgba(22, 115, 177, 0.95);
+        }
+        
+.nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+.nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+    
+            font-weight: 500;
+        }
+        
+.nav-links a:hover {
+            background-color: rgb(188, 97, 22);
+            
+        }
+        
+.nav-links a.active {
+            background-color: #e0c28d;
+            color: #5a3e2b;
+        }
+
+/* Hero Section  */
+
+.hero {
+    background: linear-gradient(rgba(90, 62, 43, 0.8), rgba(90, 62, 43, 0.8)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 200px 20px;
+            margin: 0 0;
+          
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    color: white;
+    background-color: #ff6f61;
+    padding: 12px 25px;
+    margin: 0 10px;
+    border-radius: 5px;
+    
+}
+
+.hero-buttons a:hover {
+    background-color: #254d3e;
+}
+
+
+/* Why Choose Us */
+
+.why-choose-us {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.why-choose-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.feature {
+    display: inline-block;
+    width: 220px;
+    margin: 20px;
+    background: linear-gradient(145deg, #ffffff 0%, #f9f7f3 100%);
+    padding: 30px 25px;
+    box-shadow: 
+        0 8px 25px rgba(59, 41, 29, 0.12),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9),
+        inset 0 1px 3px rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(160, 111, 66, 0.1);
+    vertical-align: top;
+    text-align: center;
+}
+
+/* خط علوي ملون */
+.feature::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        #a06f42, 
+        #c9a87a, 
+        #e8d4b5, 
+        #c9a87a, 
+        #a06f42
+    );
+    background-size: 200% 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    animation: featureShimmer 3s infinite linear paused;
+}
+
+@keyframes featureShimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
+}
+
+/* أيقونة زخرفية في الزاوية */
+.feature::after {
+    content: "◆";
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: rgba(160, 111, 66, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* أيقونة داخل الفيتشر */
+.feature .feature-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px auto;
+    background: linear-gradient(135deg, #f5eee6 0%, #e8d4b5 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #a06f42;
+    box-shadow: 0 5px 15px rgba(160, 111, 66, 0.15);
+    transition: all 0.4s ease;
+}
+
+/* العنوان */
+.feature h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #3b291d;
+    font-family: 'Georgia', serif;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+/* خط تحت العنوان */
+.feature h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #a06f42, #c9a87a);
+    border-radius: 1px;
+    opacity: 0.7;
+}
+
+/* النص الوصفي */
+.feature .feature-text {
+    color: #5a4a3d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+/* تأثيرات hover محسنة */
+.feature:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 
+        0 18px 40px rgba(59, 41, 29, 0.18),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.95);
+    border-color: rgba(160, 111, 66, 0.2);
+}
+
+.feature:hover::before {
+    transform: scaleX(1);
+    animation-play-state: running;
+}
+
+.feature:hover::after {
+    transform: rotate(90deg) scale(1.2);
+    color: rgba(160, 111, 66, 0.12);
+}
+
+.feature:hover .feature-icon {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 8px 20px rgba(160, 111, 66, 0.25);
+    background: linear-gradient(135deg, #e8d4b5 0%, #c9a87a 100%);
+}
+
+.feature:hover h3 {
+    letter-spacing: 0.5px;
+    color: #2c2118;
+}
+
+.feature:hover .feature-text {
+    color: #3b291d;
+    transform: translateY(-2px);
+}
+
+/* تأثير دوران للعنوان */
+.feature h3 {
+    perspective: 1000px;
+}
+
+.feature:hover h3 {
+    animation: titleTilt 0.6s ease;
+}
+
+@keyframes titleTilt {
+    0%, 100% { transform: rotateX(0); }
+    50% { transform: rotateX(10deg); }
+}
+
+/* تأثير ظهور متتالي */
+@keyframes featureAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.feature {
+    animation: featureAppear 0.7s ease forwards;
+    opacity: 0;
+}
+
+.feature:nth-child(1) { animation-delay: 0.1s; }
+.feature:nth-child(2) { animation-delay: 0.2s; }
+.feature:nth-child(3) { animation-delay: 0.3s; }
+.feature:nth-child(4) { animation-delay: 0.4s; }
+.feature:nth-child(5) { animation-delay: 0.5s; }
+.feature:nth-child(6) { animation-delay: 0.6s; }
+
+
+/* Signature Dishes */
+
+.signature-dishes {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.signature-dishes h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.dish-card {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* h_shadow v_shadow blur  color*/
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+}
+
+.dish-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.dish-card h3 {
+    color: #ff6f61;
+    margin: 15px 0 5px 0;
+}
+
+.dish-card p {
+    padding: 0 10px 15px 10px;
+    font-size: 0.95rem;
+}
+.dish-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+}
+.dish-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.dish-card:hover img {
+    transform: scale(1.12);
+}
+
+.view-menu-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 18px 45px;
+    background: linear-gradient(135deg, #a06f42 0%, #c9a87a 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 25px rgba(160, 111, 66, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    line-height: 1.4;
+    min-width: 200px;
+    text-align: center;
+}
+
+/* تأثير توهج داخلي */
+.view-menu-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.25), 
+        transparent
+    );
+    transition: left 0.8s ease;
+    z-index: 1;
+}
+
+
+.view-menu-btn::after {
+    content: "→";
+    margin-left: 12px;
+    font-size: 1.4rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+
+.view-menu-btn .btn-border {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #a06f42, #c9a87a, #e8d4b5, #c9a87a, #a06f42);
+    background-size: 300% 300%;
+    border-radius: 52px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: borderRotate 4s linear infinite paused;
+}
+
+@keyframes borderRotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* تأثيرات hover محسنة */
+.view-menu-btn:hover {
+    background: linear-gradient(135deg, #c9a87a 0%, #e8d4b5 100%);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 
+        0 15px 35px rgba(160, 111, 66, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.15);
+    color: #3b291d;
+    letter-spacing: 1.3px;
+    padding: 18px 50px;
+}
+
+.view-menu-btn:hover::before {
+    left: 100%;
+}
+
+.view-menu-btn:hover::after {
+    transform: translateX(10px) rotate(0deg);
+    animation: arrowBounce 0.6s ease infinite alternate;
+}
+
+@keyframes arrowBounce {
+    0% { transform: translateX(5px); }
+    100% { transform: translateX(15px); }
+}
+
+.view-menu-btn:hover .btn-border {
+    opacity: 1;
+    animation-play-state: running;
+}
+
+/* تأثير ضغط عند النقر */
+.view-menu-btn:active {
+    transform: translateY(-3px) scale(0.98);
+    transition: transform 0.1s ease;
+    box-shadow: 
+        0 8px 20px rgba(160, 111, 66, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* تأثير اهتزاز خفيف */
+@keyframes btnShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+}
+
+.view-menu-btn:hover {
+    animation: btnShake 0.5s ease;
+}
+/* Call to Action */
+
+.cta-section {
+    text-align: center;
+    padding: 100px 40px;
+    background: linear-gradient(135deg, 
+        rgba(59, 41, 29, 0.92) 0%, 
+        rgba(90, 62, 43, 0.95) 100%
+    ), 
+    url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin: 80px 0;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* تأثير خلفية زخرفي */
+.cta-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(160, 111, 66, 0.25) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(201, 168, 122, 0.2) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* حدود زخرفية */
+.cta-section::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.cta-section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(160, 111, 66, 0.4);
+    color: #f8f4ef;
+    position: relative;
+    padding-bottom: 20px;
+    line-height: 1.2;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* خط تحت العنوان */
+.cta-section h2::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #c9a87a, 
+        #ffd8a6, 
+        #c9a87a, 
+        transparent
+    );
+    margin: 25px auto 30px auto;
+    border-radius: 2px;
+}
+
+.cta-section p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #e8dfd3;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    clear: both;
+}
+
+/* زر CTA محسّن */
+.cta-button {
+    background: linear-gradient(135deg, #a06f42 0%, #c9a87a 100%);
+    color: white;
+    padding: 22px 50px;
+    margin-top: 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 30px rgba(160, 111, 66, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Georgia', serif;
+    clear: both;
+}
+
+/* تأثير توهج داخلي */
+.cta-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    transition: left 0.7s ease;
+}
+
+/* أيقونة في الزر */
+.cta-button::after {
+    content: "→";
+    margin-left: 12px;
+    font-size: 1.4rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* تأثيرات hover للزر */
+.cta-button:hover {
+    background: linear-gradient(135deg, #c9a87a 0%, #e8d4b5 100%);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+        0 15px 40px rgba(160, 111, 66, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.15);
+    color: #3b291d;
+    letter-spacing: 1.2px;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover::after {
+    transform: translateX(8px);
+}
+
+/* تأثير ضغط عند النقر */
+.cta-button:active {
+    transform: translateY(-2px) scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+
+
+/* Footer */
+.footer {
+    background-color: #3b291d;
+    color: #f0e9e1;
+    padding: 60px 40px 30px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    font-family: 'Georgia', serif;
+    border-top: 5px solid #a06f42;
+    position: relative;
+    min-height: 350px;
+}
+
+/* تأثير خلفية */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23a06f42" opacity="0.03"><path d="M20,20 Q50,5 80,20 T100,50 Q85,80 50,100 T0,50 Q15,20 50,0 T80,20"/></svg>');
+    background-size: 300px;
+    pointer-events: none;
+}
+
+/* كل قسم في الفوتر */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* القسم الأول - La Maison */
+.footer-section:first-child {
+    max-width: 400px;
+}
+
+/* القسم الأول - العنوان */
+.footer-section:first-child h3 {
+    font-size: 1.8rem;
+    color: #f8f4ef;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+/* القسم الأول - النص */
+.footer-section:first-child pre {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #d4c9bc;
+    margin-bottom: 0;
+    white-space: pre-line;
+    font-family: 'Georgia', serif;
+    text-align: left;
+    width: 100%;
+}
+
+/* الأقسام الأخرى */
+.footer-section:not(:first-child) {
+    justify-content: flex-start;
+}
+
+/* العناوين للأقسام الأخرى */
+.footer-section:nth-child(2) h3,
+.footer-section:nth-child(3) h3,
+.footer-section:nth-child(4) h3 {
+    font-size: 1.4rem;
+    color: #f8f4ef;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/* خط تحت العناوين */
+.footer-section:nth-child(2) h3::after,
+.footer-section:nth-child(3) h3::after,
+.footer-section:nth-child(4) h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #a06f42;
+}
+
+/* الروابط في القسم الثاني */
+.footer-section:nth-child(2) ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.footer-section:nth-child(2) ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section:nth-child(2) ul li a {
+    color: #d4c9bc;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.footer-section:nth-child(2) ul li a:hover {
+    color: #a06f42;
+    transform: translateX(5px);
+}
+
+/* النصوص في الأقسام 3 و 4 */
+.footer-section:nth-child(3) pre,
+.footer-section:nth-child(4) pre {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #d4c9bc;
+    margin-bottom: 15px;
+    white-space: pre-line;
+    font-family: 'Georgia', serif;
+    position: relative;
+    padding-left: 20px;
+    width: 100%;
+}
+
+/* أيقونات صغيرة للنصوص */
+.footer-section:nth-child(3) pre::before,
+.footer-section:nth-child(4) pre::before {
+    content: "©";
+    position: absolute;
+    left: 0;
+    color: #a06f42;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* الخط الفاصل */
+.footer hr {
+    grid-column: 1/-1;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #a06f42, transparent);
+    margin: 20px 0 30px 0;
+}
+
+/* حقوق النشر */
+.copyright {
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #c9b8a8;
+    padding-top: 20px;
+    border-top: 1px solid rgba(160, 111, 66, 0.3);
+    margin-top: 10px;
+}
+
+/* تصميم متجاوب */

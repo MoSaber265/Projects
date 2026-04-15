@@ -1,0 +1,361 @@
+/* =========================================
+   Global Style
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* =========================================
+   Sticky Navigation Bar
+========================================= */
+.sticky-nav {
+    background-color: #205ea9;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #bc6116;
+}
+
+.nav-links a.active {
+    background-color: #e0c28d;
+    color: #5a3e2b;
+}
+
+/* =========================================
+   Header Section
+========================================= */
+.chef-header {
+    text-align: center;
+    background-color: #5a3e2b;
+    color: #e0c28d;
+    padding: 60px 20px;
+    margin-bottom: 50px;
+}
+
+.chef-header h1 {
+    font-size: 3rem;
+    font-family: Georgia, serif;
+    margin-bottom: 10px;
+}
+
+.chef-header p {
+    font-size: 1.1rem;
+}
+
+.header-icon {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   Recommendation Cards
+========================================= */
+
+.recommendations-section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.chef-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.chef-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.card-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* ========= Content ========= */
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-header h2 {
+    font-size: 1.3rem;
+    color: #5a3e2b;
+    font-family: Georgia, serif;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+/* ========= Tags ========= */
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Specific tag colors */
+.tag.vegetarian { background: #d4edda; color: #155724; }
+.tag.popular { background: #fff3cd; color: #856404; }
+.tag.spicy { background: #f8d7da; color: #721c24; }
+.tag.asian { background: #cce5ff; color: #004085; }
+.tag.premium { background: #d1ecf1; color: #0c5460; }
+.tag.french { background: #e2e3e5; color: #383d41; }
+.tag.signature { background: #e67e22; color: white; }
+.tag.must-try { background: #2c3e50; color: white; }
+
+.description {
+    color: #555;
+    margin-bottom: 18px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ========= Chef Recommendation Footer ========= */
+.chef-recommendation {
+    margin-top: auto;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chef-note {
+    font-size: 0.85rem;
+    color: #777;
+    font-style: italic;
+}
+
+.rating .star {
+    color: #f1c40f;
+}
+
+/* =========================================
+   Footer (Shared La Maison Styling)
+========================================= */
+
+.footer {
+    background-color: #3b291d;
+    color: #f0e9e1;
+    padding: 60px 40px 30px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    font-family: 'Georgia', serif;
+    border-top: 5px solid #a06f42;
+    position: relative;
+    min-height: 350px;
+}
+
+/* تأثير خلفية */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23a06f42" opacity="0.03"><path d="M20,20 Q50,5 80,20 T100,50 Q85,80 50,100 T0,50 Q15,20 50,0 T80,20"/></svg>');
+    background-size: 300px;
+    pointer-events: none;
+}
+
+/* كل قسم في الفوتر */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* القسم الأول - La Maison */
+.footer-section:first-child {
+    max-width: 400px;
+}
+
+/* القسم الأول - العنوان */
+.footer-section:first-child h3 {
+    font-size: 1.8rem;
+    color: #f8f4ef;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+/* القسم الأول - النص */
+.footer-section:first-child pre {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #d4c9bc;
+    margin-bottom: 0;
+    white-space: pre-line;
+    font-family: 'Georgia', serif;
+    text-align: left;
+    width: 100%;
+}
+
+/* الأقسام الأخرى */
+.footer-section:not(:first-child) {
+    justify-content: flex-start;
+}
+
+/* العناوين للأقسام الأخرى */
+.footer-section:nth-child(2) h3,
+.footer-section:nth-child(3) h3,
+.footer-section:nth-child(4) h3 {
+    font-size: 1.4rem;
+    color: #f8f4ef;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/* خط تحت العناوين */
+.footer-section:nth-child(2) h3::after,
+.footer-section:nth-child(3) h3::after,
+.footer-section:nth-child(4) h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #a06f42;
+}
+
+/* الروابط في القسم الثاني */
+.footer-section:nth-child(2) ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.footer-section:nth-child(2) ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section:nth-child(2) ul li a {
+    color: #d4c9bc;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.footer-section:nth-child(2) ul li a:hover {
+    color: #a06f42;
+    transform: translateX(5px);
+}
+
+/* النصوص في الأقسام 3 و 4 */
+.footer-section:nth-child(3) pre,
+.footer-section:nth-child(4) pre {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #d4c9bc;
+    margin-bottom: 15px;
+    white-space: pre-line;
+    font-family: 'Georgia', serif;
+    position: relative;
+    padding-left: 20px;
+    width: 100%;
+}
+
+/* أيقونات صغيرة للنصوص */
+.footer-section:nth-child(3) pre::before,
+.footer-section:nth-child(4) pre::before {
+    content: "©";
+    position: absolute;
+    left: 0;
+    color: #a06f42;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* الخط الفاصل */
+.footer hr {
+    grid-column: 1/-1;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #a06f42, transparent);
+    margin: 20px 0 30px 0;
+}
+
+/* حقوق النشر */
+.copyright {
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #c9b8a8;
+    padding-top: 20px;
+    border-top: 1px solid rgba(160, 111, 66, 0.3);
+    margin-top: 10px;
+}
+
+/* تصميم متجاوب */

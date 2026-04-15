@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Reservations-Savory Delights</title>
+
+  <link rel="stylesheet" href="D:\courses\Web Technology\Project Web\css\style.css">
+</head>
+
+<body>
+  <div class="page">
+     <!-- Sticky Navigation Bar -->
+    <div class="sticky-nav" id="stickyNav" >
+           <div class="nav-links">
+                <a href="home.html" >Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="chef.html" >Chef's Picks</a>
+                <a href="offers.html">Special Offers</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About Us</a>
+                <a href="branches.html">Branches</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="contact.html"   >Contact</a>
+                <a href="reserve.html" class="active">Reserve Table</a>
+            </div>
+        </div>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Make a Reservation</h1>
+        <p>Book your table and enjoy an unforgettable dining experience</p>
+      </div>
+
+      <div class="content">
+
+        <div class="why-box">
+          <h2>Why Reserve With Us?</h2>
+
+          <div class="feature">
+            <div>
+              <h3>Guaranteed Seating</h3>
+              <p>Your table will be ready when you arrive. No waiting required.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div>
+              <h3>Flexible Timing</h3>
+              <p>Choose the time that works best for your schedule.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            
+            <div>
+              <h3>Special Accommodations</h3>
+              <p>Let us know about dietary restrictions or special occasions.</p>
+            </div>
+          </div>
+
+          <div class="policy">
+            <h3>Reservation Policy</h3>
+            <ul>
+              <li>Reservations can be made up to 30 days in advance</li>
+              <li>Please arrive within 15 minutes of your reservation time</li>
+              <li>For parties of 8 or more, please call us directly</li>
+              <li>Cancellations should be made 24 hours in advance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-box">
+          <form>
+            <fieldset>
+              <legend>Personal Information</legend>
+              <label>Full Name *</label>
+              <input type="text" placeholder="Eslam Ebrahim" name="full-name"  required  />
+
+              <label>Email Address *</label>
+              <input type="email" placeholder="eslam@example.com" name="email" required />
+
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="(+20) 10-457-5478" name="phone" required />
+            </fieldset>
+
+            <fieldset>
+              <legend>Reservation Details</legend>
+
+              <div class="grid-2">
+                <div>
+                  <label>Date *</label>
+                  <input type="date" name="date" required />
+                </div>
+                <div>
+                  <label>Time *</label>
+                  <input type="time" name="time" required />
+                </div>
+              </div>
+
+              <label>Number of Guests *</label>
+              <select required>
+                <option value="1 Guest">1 Guest</option>
+                <option value="2 Guest">2 Guests</option>
+                <option value="3 Guest">3 Guests</option>
+                <option value="4 Guest">4 Guests</option>
+                <option value="5 Guest">5 Guests</option>
+                <option value="6 Guest">6 Guests</option>
+                <option value="7 Guest">7 Guests</option>
+                <option value="8 Guest">8 Guests</option>
+                <option value="other">other</option>
+              </select>
+
+              <label>Occasion</label>
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input type="radio" name="occasion" value="Regular Dining" checked id="reg">
+                  <label for="reg">Regular Dining</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="occasion" value="birthday" id="birth">
+                  <label for="birth">Birthday Celebration</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="occasion" value="anniversary" id="anniv">
+                  <label for="anniv">Anniversary</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="occasion" value="business" id="bus">
+                  <label for="bus">Business Meeting</label>
+                </div>
+              </div>
+
+              <label>Special Requests</label>
+              <textarea rows="3" placeholder="Dietary restrictions, seating preferences, etc."></textarea>
+            </fieldset>
+
+            <button type="submit" class="submit-btn">Confirm Reservation</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+ <!-- Footer -->
+    <div class="footer">
+    <div class="footer-section">
+        <h3>La Maison</h3>
+        <p>Experience the finest cuisine crafted with passion and precision. Where every meal is a celebration.</p>
+    </div>
+
+    <div class="footer-section">
+        <h4 style="font-family: 'Times New Roman', Times, serif;">Quick Links</h4>
+        <ul style="list-style-type: none;">
+        <Li><a href="menu.html">✓ Menu</a></Li>
+        <li><a href="reserve.html">✓ Reservations</a></li>
+        <li><a href="offers.html">✓ Special Offers</a></li>
+        <li><a href="about.html">✓ About Us</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section contact">
+        <h4 style="font-family: 'Times New Roman', Times, serif;">Contact</h4>
+        <pre><i class="fa fa-map-marker"><img src="D:\courses\Web Technology\Project Web\images\location icon.png" alt="location"  width="16" height="16"> </i>123 Gourmet Street, Culinary 
+         District, City 12345</pre>
+        <pre><i class="fa fa-phone"> <img src="D:\courses\Web Technology\Project Web\images\tele icon.png" alt="Phone"  width="16" height="16"></i>+1 (555) 123-4567</pre>
+        <pre><i class="fa fa-envelope"><img src="D:\courses\Web Technology\Project Web\images\email icon.png" alt="Email"  width="16" height="16"> </i>info@lamaison.com</pre>
+    </div>
+
+    <div class="footer-section">
+        <h4 >Opening Hours</h4>
+        <pre><i class="fa fa-clock-o"><img src="D:\courses\Web Technology\Project Web\images\HourIcon.png" alt="HourIcon"  width="16" height="16"> </i>Mon - Fri 
+10:00 AM - 10:00 PM</pre>
+        <pre><i class="fa fa-clock-o"><img src="D:\courses\Web Technology\Project Web\images\HourIcon.png" alt="HourIcon" width="16" height="16" > </i>Sat - Sun
+10:00 AM - 11:00 PM</pre>
+    </div>
+
+    <hr>
+    <p class="copyright">© 2025 La Maison Restaurant. All rights reserved.</p>
+</div>
+
+</body>
+</html>
