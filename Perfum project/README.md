@@ -15,12 +15,14 @@ A premium UI/UX design for a luxury perfume application, aiming to provide a hig
 <p align="center">
   <img src="Screens/Home Screen.png" width="250" title="Home Screen">
   <img src="Screens/Product1 Screen.png" width="250" title="Product Details">
-  <img src="Screens/Selling Screen.png" width="250" title="Checkout Process">
+  <img src="Screens/Product2 Screen.png" width="250">
+  
 </p>
 
 <p align="center">
-  <img src="Screens/Product2 Screen.png" width="250">
+  
   <img src="Screens/Product3 Screen.png" width="250">
+  <img src="Screens/Selling Screen.png" width="250" title="Checkout Process">
   <img src="Screens/Contect us Screen.png" width="250">
 </p>
 
