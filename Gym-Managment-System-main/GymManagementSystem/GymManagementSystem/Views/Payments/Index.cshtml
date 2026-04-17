@@ -1,0 +1,73 @@
+﻿@model IEnumerable<GymManagementSystem.Models.Payment>
+
+@{
+    ViewData["Title"] = "Payments Records";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+            <h2 class="text-primary fw-bold mb-0">Payments Records 💰</h2>
+            <a asp-action="Create" class="btn btn-success shadow-sm">
+                <i class="bi bi-plus-circle me-1"></i> Record New Payment
+            </a>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="ps-4">Member Name</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Date</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                                <tr>
+                                    <td class="ps-4">
+                                        <span class="fw-bold text-dark">@(item.Member?.Name ?? "N/A")</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-light text-success fs-6 border border-success">
+                                        @item.Amount.ToString("N2") EGP
+                                        </span>
+                                    </td>
+                                    <td>
+                                    @{
+                                        var badgeClass = item.PaymentMethod switch
+                                        {
+                                            "Cash" => "bg-info text-dark",
+                                            "Visa/Credit" => "bg-primary",
+                                            "Vodafone Cash" => "bg-danger",
+                                            _ => "bg-secondary"
+                                        };
+                                    }
+                                        <span class="badge @badgeClass">@item.PaymentMethod</span>
+                                    </td>
+                                    <td class="text-muted">
+                                        <i class="bi bi-calendar3 me-1"></i> @item.PaymentDate.ToString("yyyy-MM-dd")
+                                    </td>
+                                    <td class="text-center">
+                                    @* زرار الحذف اللي ربطناه بالـ PaymentID *@
+                                        <a asp-action="Delete" asp-route-id="@item.PaymentID" class="btn btn-sm btn-outline-danger shadow-sm">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @if (!Model.Any())
+        {
+                <div class="card-footer bg-light text-center py-4">
+                    <p class="text-muted mb-0">No payment records found.</p>
+                </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-4 fw-bold">Welcome to GYM PRO 🏋️‍♂️</h1>
+    <p class="lead text-muted">Real-time statistics for your gym management.</p>
+</div>
+
+<div class="row mt-5 g-4">
+    <div class="col-md-3">
+        <div class="card bg-primary text-white shadow border-0">
+            <div class="card-body text-center">
+                <i class="bi bi-person-badge fs-1"></i>
+                <h4 class="mt-2">Trainers</h4>
+                <h2 class="display-5 fw-bold">@ViewBag.TrainersCount</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card bg-success text-white shadow border-0">
+            <div class="card-body text-center">
+                <i class="bi bi-people-fill fs-1"></i>
+                <h4 class="mt-2">Members</h4>
+                <h2 class="display-5 fw-bold">@ViewBag.MembersCount</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card bg-info text-white shadow border-0">
+            <div class="card-body text-center">
+                <i class="bi bi-card-checklist fs-1"></i>
+                <h4 class="mt-2">Plans</h4>
+                <h2 class="display-5 fw-bold">@ViewBag.PlansCount</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card bg-warning text-dark shadow border-0">
+            <div class="card-body text-center">
+                <i class="bi bi-currency-dollar fs-1"></i>
+                <h4 class="mt-2">Revenue</h4>
+                <h2 class="display-5 fw-bold">@ViewBag.TotalRevenue.ToString("N0") <small class="fs-6">EGP</small></h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-5">
+    <a asp-controller="Payments" asp-action="Create" class="btn btn-outline-dark btn-lg">
+        <i class="bi bi-plus-circle"></i> Quick Payment Entry
+    </a>
+</div>

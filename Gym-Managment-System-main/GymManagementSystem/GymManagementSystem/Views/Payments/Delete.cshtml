@@ -1,0 +1,53 @@
+﻿@model GymManagementSystem.Models.Payment
+
+@{
+    ViewData["Title"] = "Delete Payment Record";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-danger shadow">
+                <div class="card-header bg-danger text-white py-3">
+                    <h4 class="mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i>Are you sure you want to delete this payment?</h4>
+                </div>
+                <div class="card-body p-4">
+                    <div class="alert alert-warning border-start border-4 border-warning">
+                        <i class="bi bi-info-circle-fill me-2"></i>
+                        <strong>Notice:</strong> This action will permanently remove the payment history for this member. It cannot be undone.
+                    </div>
+
+                    <dl class="row mt-4">
+                        <dt class="col-sm-4 text-muted">Member Name</dt>
+                        <dd class="col-sm-8 fw-bold">@(Model.Member?.Name ?? "N/A")</dd>
+
+                        <dt class="col-sm-4 text-muted">Amount Paid</dt>
+                        <dd class="col-sm-8 text-danger fw-bold fs-5">@Model.Amount.ToString("C2")</dd> @* C2 لعرض العملة بشكل تلقائي *@
+
+                        <dt class="col-sm-4 text-muted">Payment Date</dt>
+                        <dd class="col-sm-8">@Model.PaymentDate.ToString("dd MMMM, yyyy")</dd>
+
+                        <dt class="col-sm-4 text-muted">Payment Method</dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-secondary">@Model.PaymentMethod</span>
+                        </dd>
+                    </dl>
+
+                    <form asp-action="Delete">
+                        @* التأكد من ربط الـ ID الصحيح *@
+                        <input type="hidden" asp-for="PaymentID" />
+
+                        <div class="mt-4 border-top pt-3 text-end">
+                            <a asp-action="Index" class="btn btn-outline-secondary px-4 me-2">
+                                <i class="bi bi-x-circle me-1"></i> Cancel
+                            </a>
+                            <button type="submit" class="btn btn-danger px-4 shadow">
+                                <i class="bi bi-trash-fill me-1"></i> Confirm Delete
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

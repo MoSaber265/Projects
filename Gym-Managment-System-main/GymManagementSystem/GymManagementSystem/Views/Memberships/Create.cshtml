@@ -1,0 +1,50 @@
+﻿@model GymManagementSystem.Models.Membership
+
+<div class="container mt-4">
+    <div class="card shadow border-0">
+        <div class="card-header bg-primary text-white py-3">
+            <h4 class="mb-0">Add New Membership Type</h4>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Create">
+                @* ملخص الأخطاء في حالة وجود مشكلة *@
+                <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Type" class="form-label font-weight-bold">Membership Type (e.g. Monthly, Annual)</label>
+                    <input asp-for="Type" class="form-control" placeholder="Enter type name" />
+                    <span asp-validation-for="Type" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Duration" class="form-label font-weight-bold">Duration (Months/Days)</label>
+                    <input asp-for="Duration" class="form-control" type="number" placeholder="Enter duration" />
+                    <span asp-validation-for="Duration" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label font-weight-bold">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input asp-for="Price" class="form-control" type="number" step="0.01" placeholder="0.00" />
+                    </div>
+                    <span asp-validation-for="Price" class="text-danger small"></span>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success px-4">
+                        <i class="fas fa-save me-1"></i> Save Membership
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary px-4">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @* تفعيل الـ Validation في المتصفح *@
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

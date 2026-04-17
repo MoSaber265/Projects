@@ -1,0 +1,74 @@
+﻿@model GymManagementSystem.Models.Trainer
+
+@{
+    ViewData["Title"] = "Add Trainer";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-success text-white py-3">
+                    <h4 class="mb-0"><i class="bi bi-person-badge-fill me-2"></i>Add New Trainer</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create">
+                        @* ملخص الأخطاء *@
+                        <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label fw-bold">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input asp-for="Name" class="form-control" placeholder="e.g. Capt. Mohamed" />
+                            </div>
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Phone" class="form-label fw-bold">Phone Number</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                                <input asp-for="Phone" class="form-control" placeholder="01xxxxxxxxx" />
+                            </div>
+                            <span asp-validation-for="Phone" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Specialization" class="form-label fw-bold">Specialization</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-star"></i></span>
+                                <input asp-for="Specialization" class="form-control" placeholder="Yoga, CrossFit, Bodybuilding" />
+                            </div>
+                            <span asp-validation-for="Specialization" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Salary" class="form-label fw-bold">Salary (EGP)</label>
+                            <div class="input-group">
+                                <span class="input-group-text">£</span>
+                                <input asp-for="Salary" class="form-control" type="number" step="0.01" />
+                            </div>
+                            <span asp-validation-for="Salary" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-success btn-lg shadow">
+                                <i class="bi bi-check-circle me-1"></i> Save Trainer Record
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left me-1"></i> Back to List
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

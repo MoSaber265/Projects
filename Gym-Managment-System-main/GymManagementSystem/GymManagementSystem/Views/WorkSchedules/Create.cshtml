@@ -1,0 +1,78 @@
+﻿@model GymManagementSystem.Models.WorkSchedule
+
+@{
+    ViewData["Title"] = "Create Schedule";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow border-0">
+                <div class="card-header bg-dark text-white py-3">
+                    <h5 class="mb-0"><i class="bi bi-calendar-plus me-2"></i>Create New Training Session</h5>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ScheduleDate" class="form-label fw-bold">Session Date</label>
+                                <input asp-for="ScheduleDate" type="date" class="form-control" />
+                                <span asp-validation-for="ScheduleDate" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Hall" class="form-label fw-bold">Hall Number</label>
+                                <input asp-for="Hall" type="number" class="form-control" placeholder="e.g. 1" />
+                                <span asp-validation-for="Hall" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="StartTime" class="form-label fw-bold">Start Time</label>
+                                <input asp-for="StartTime" type="time" class="form-control" />
+                                <span asp-validation-for="StartTime" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="EndTime" class="form-label fw-bold">End Time</label>
+                                <input asp-for="EndTime" type="time" class="form-control" />
+                                <span asp-validation-for="EndTime" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="TrainerID" class="form-label fw-bold">Select Coach</label>
+                                <select asp-for="TrainerID" class="form-select" asp-items="ViewBag.Trainers">
+                                    <option value="">-- Choose Coach --</option>
+                                </select>
+                                <span asp-validation-for="TrainerID" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="PlanID" class="form-label fw-bold">Workout Plan</label>
+                                <select asp-for="PlanID" class="form-select" asp-items="ViewBag.Plans">
+                                    <option value="">-- Choose Plan --</option>
+                                </select>
+                                <span asp-validation-for="PlanID" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 border-top pt-3 text-end">
+                            <a asp-action="Index" class="btn btn-outline-secondary px-4 me-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary px-5 shadow">
+                                <i class="bi bi-save me-1"></i> Save Schedule
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

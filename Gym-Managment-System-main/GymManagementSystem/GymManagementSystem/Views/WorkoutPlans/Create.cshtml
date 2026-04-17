@@ -1,0 +1,63 @@
+﻿@model GymManagementSystem.Models.WorkoutPlan
+
+@{
+    ViewData["Title"] = "Create Workout Plan";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow border-0">
+                <div class="card-header bg-primary text-white py-3">
+                    <h5 class="mb-0"><i class="bi bi-journal-plus me-2"></i>Create New Workout Plan</h5>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create">
+                        @* ملخص الأخطاء العامة *@
+                        <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="PlanName" class="form-label fw-bold">Plan Name</label>
+                            <input asp-for="PlanName" class="form-control" placeholder="e.g. 30 Days Shred" />
+                            <span asp-validation-for="PlanName" class="text-danger small"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="DifficultyLevel" class="form-label fw-bold">Difficulty (1-5)</label>
+                                <input asp-for="DifficultyLevel" type="number" class="form-control" min="1" max="5" />
+                                <span asp-validation-for="DifficultyLevel" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="TrainerID" class="form-label fw-bold">Assigned Trainer</label>
+                                <select asp-for="TrainerID" class="form-select" asp-items="ViewBag.Trainers">
+                                    <option value="">-- Select Coach --</option>
+                                </select>
+                                <span asp-validation-for="TrainerID" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label fw-bold">Description</label>
+                            <textarea asp-for="Description" class="form-control" rows="4" placeholder="Describe the exercises and goals..."></textarea>
+                            <span asp-validation-for="Description" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end border-top pt-3">
+                            <a asp-action="Index" class="btn btn-light border">Cancel</a>
+                            <button type="submit" class="btn btn-primary px-5 shadow-sm">
+                                <i class="bi bi-save me-1"></i> Save Plan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<GymManagementSystem.Models.Membership>
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Membership Plans</h2>
+        <a asp-action="Create" class="btn btn-primary">Create New Plan</a>
+    </div>
+
+    <table class="table table-hover shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Plan Type</th>
+                <th>Duration (Days)</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.Type</td>
+                        <td>@item.Duration</td>
+                        <td>@item.Price.ToString("C")</td> <td>
+                            <a asp-action="Delete" asp-route-id="@item.MemberShip" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>
