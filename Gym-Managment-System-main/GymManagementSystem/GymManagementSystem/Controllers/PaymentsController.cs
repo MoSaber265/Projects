@@ -27,7 +27,7 @@ namespace GymManagementSystem.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Payment paymentObj) // تغيير الاسم لـ paymentObj
+        public async Task<IActionResult> Create(Payment paymentObj)
         {
             ModelState.Remove("Member");
 
@@ -35,6 +35,46 @@ namespace GymManagementSystem.Controllers
             {
                 _context.Add(paymentObj);
                 await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.Members = new SelectList(_context.Members, "MemberID", "Name", paymentObj.MemberID);
+            return View(paymentObj);
+        }
+
+        // --- 3. صفحة تعديل دفعة موجودة (جديد) ---
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var payment = await _context.Payments.FindAsync(id);
+            if (payment == null) return NotFound();
+
+            // إرسال قائمة الأعضاء مع تحديد العضو الحالي
+            ViewBag.Members = new SelectList(_context.Members, "MemberID", "Name", payment.MemberID);
+            return View(payment);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Payment paymentObj)
+        {
+            if (id != paymentObj.PaymentID) return NotFound();
+
+            ModelState.Remove("Member");
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(paymentObj);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!PaymentExists(paymentObj.PaymentID)) return NotFound();
+                    else throw;
+                }
                 return RedirectToAction(nameof(Index));
             }
 
@@ -61,9 +101,7 @@ namespace GymManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            // نبحث بالـ PaymentID لضمان حذف السجل الصحيح
-            var payment = await _context.Payments
-                .FirstOrDefaultAsync(m => m.PaymentID == id);
+            var payment = await _context.Payments.FindAsync(id);
 
             if (payment != null)
             {
@@ -71,6 +109,11 @@ namespace GymManagementSystem.Controllers
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool PaymentExists(int id)
+        {
+            return _context.Payments.Any(e => e.PaymentID == id);
         }
     }
 }

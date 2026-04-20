@@ -1,41 +1,87 @@
 ﻿@model IEnumerable<GymManagementSystem.Models.MemberWorkoutPlan>
 
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="text-success fw-bold"><i class="bi bi-person-gear"></i> Member Assignments</h2>
-        <a asp-action="Create" class="btn btn-success shadow">
-            <i class="bi bi-plus-circle"></i> Assign Plan to Member
-        </a>
-    </div>
+@{
+    ViewData["Title"] = "Member Assignments";
+}
 
-    <div class="table-responsive">
-        <table class="table table-hover table-bordered shadow-sm bg-white">
-            <thead class="table-success">
-                <tr>
-                    <th>Member Name</th>
-                    <th>Workout Plan</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th class="text-center">Actions</th> @* عمود الأكشن *@
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+<div class="container mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-dark text-white py-3 d-flex justify-content-between align-items-center">
+            <h5 class="mb-0 fw-bold">
+                <i class="bi bi-person-gear me-2 text-success"></i> Member Assignments
+            </h5>
+            <a asp-action="Create" class="btn btn-success btn-sm fw-bold shadow-sm">
+                <i class="bi bi-plus-circle"></i> Assign Plan to Member
+            </a>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
                         <tr>
-                            <td><strong>@item.Member?.Name</strong></td>
-                            <td><span class="badge bg-primary">@item.WorkoutPlan?.PlanName</span></td>
-                            <td>@item.StartDate.ToShortDateString()</td>
-                            <td>@(item.EndDate?.ToShortDateString() ?? "Ongoing")</td>
-                            <td class="text-center">
-                            @* زرار الحذف اللي هينادي على أكشن الـ Delete *@
-                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm shadow-sm">
-                                    <i class="bi bi-trash-fill"></i> Remove
-                                </a>
-                            </td>
+                            <th class="ps-4">Member Name</th>
+                            <th>Workout Plan</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th class="text-center" style="width: 150px;">Actions</th>
                         </tr>
-                }
-            </tbody>
-        </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                                <tr>
+                                    <td class="ps-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-success-subtle text-success rounded-circle p-2 me-2">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                            <span class="fw-bold text-dark">@item.Member?.Name</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-primary-subtle text-primary-emphasis border border-primary-subtle px-3">
+                                            <i class="bi bi-activity me-1"></i> @item.WorkoutPlan?.PlanName
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted small">@item.StartDate.ToShortDateString()</span>
+                                    </td>
+                                    <td>
+                                    @if (item.EndDate.HasValue)
+                                    {
+                                                <span class="text-muted small">@item.EndDate.Value.ToShortDateString()</span>
+                                    }
+                                    else
+                                    {
+                                                <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle px-2">Ongoing</span>
+                                    }
+                                    </td>
+                                    <td class="text-center pe-3">
+                                        <div class="btn-group shadow-sm border rounded" role="group">
+                                            <a asp-action="Edit" asp-route-id="@item.Id" 
+                                               class="btn btn-white btn-sm text-warning border-end" title="Edit">
+                                                <i class="bi bi-pencil-square fs-5"></i>
+                                            </a>
+                                            <a asp-action="Details" asp-route-id="@item.Id" 
+                                               class="btn btn-white btn-sm text-info border-end" title="Details">
+                                                <i class="bi bi-info-circle fs-5"></i>
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@item.Id" 
+                                               class="btn btn-white btn-sm text-danger" title="Delete">
+                                                <i class="bi bi-trash fs-5"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card-footer bg-white text-muted small py-2 text-end">
+            Total Assignments: @Model.Count()
+        </div>
     </div>
 </div>

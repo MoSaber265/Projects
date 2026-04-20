@@ -2,7 +2,7 @@
 using GymManagementSystem.Data;
 using GymManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.Rendering; // ضرورية للـ SelectList
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GymManagementSystem.Controllers
 {
@@ -14,7 +14,6 @@ namespace GymManagementSystem.Controllers
         // 1. عرض الخطط مع اسم المدرب المرتبط بها
         public async Task<IActionResult> Index()
         {
-            // استخدمنا Include عشان نجيب بيانات المدرب مع الخطة
             var plans = await _context.WorkoutPlans.Include(w => w.Trainer).ToListAsync();
             return View(plans);
         }
@@ -22,7 +21,6 @@ namespace GymManagementSystem.Controllers
         // 2. صفحة الإضافة (GET)
         public IActionResult Create()
         {
-            // بنبعت قائمة المدربين عشان تختار منهم في الـ View
             ViewBag.Trainers = new SelectList(_context.Trainers, "TrainerID", "Name");
             return View();
         }
@@ -32,7 +30,6 @@ namespace GymManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(WorkoutPlan plan)
         {
-            // بنشيل العلاقات من الـ ModelState عشان الـ Validation ينجح
             ModelState.Remove("Trainer");
             ModelState.Remove("MemberWorkoutPlans");
             ModelState.Remove("WorkSchedules");
@@ -44,18 +41,60 @@ namespace GymManagementSystem.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            // لو حصل خطأ بنرجع قائمة المدربين تاني عشان الفورم متبوظش
             ViewBag.Trainers = new SelectList(_context.Trainers, "TrainerID", "Name", plan.TrainerID);
             return View(plan);
         }
 
-        // 4. صفحة الحذف (GET)
+        // --- 4. صفحة التعديل (Edit - GET) ---
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var plan = await _context.WorkoutPlans.FindAsync(id);
+            if (plan == null) return NotFound();
+
+            // نبعت قائمة المدربين ونحدد المدرب اللي عامل الخطة دي حالياً
+            ViewBag.Trainers = new SelectList(_context.Trainers, "TrainerID", "Name", plan.TrainerID);
+            return View(plan);
+        }
+
+        // --- 5. حفظ التعديل (Edit - POST) ---
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, WorkoutPlan plan)
+        {
+            if (id != plan.PlanID) return NotFound();
+
+            ModelState.Remove("Trainer");
+            ModelState.Remove("MemberWorkoutPlans");
+            ModelState.Remove("WorkSchedules");
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(plan);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!PlanExists(plan.PlanID)) return NotFound();
+                    else throw;
+                }
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.Trainers = new SelectList(_context.Trainers, "TrainerID", "Name", plan.TrainerID);
+            return View(plan);
+        }
+
+        // 6. صفحة الحذف (GET)
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
 
             var plan = await _context.WorkoutPlans
-                .Include(w => w.Trainer) // عشان نعرض اسم المدرب في صفحة التأكيد
+                .Include(w => w.Trainer)
                 .FirstOrDefaultAsync(m => m.PlanID == id);
 
             if (plan == null) return NotFound();
@@ -63,7 +102,7 @@ namespace GymManagementSystem.Controllers
             return View(plan);
         }
 
-        // 5. الحذف النهائي (POST)
+        // 7. الحذف النهائي (POST)
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -76,5 +115,7 @@ namespace GymManagementSystem.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
+        private bool PlanExists(int id) => _context.WorkoutPlans.Any(e => e.PlanID == id);
     }
 }

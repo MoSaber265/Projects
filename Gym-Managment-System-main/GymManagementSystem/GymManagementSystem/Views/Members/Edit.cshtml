@@ -1,0 +1,54 @@
+﻿@model GymManagementSystem.Models.Member
+
+<div class="container mt-4">
+    <div class="card shadow border-0">
+        <div class="card-header bg-warning text-dark py-3">
+            <h4 class="mb-0"><i class="bi bi-pencil-square"></i> Edit Member Profile</h4>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="MemberID" />
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Name" class="form-label fw-bold"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Enter full name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Phone" class="form-label fw-bold"></label>
+                        <input asp-for="Phone" class="form-control" placeholder="Enter phone number" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Email" class="form-label fw-bold"></label>
+                        <input asp-for="Email" class="form-control" placeholder="example@mail.com" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Membership Plan</label>
+                        <select asp-for="MembershipID" class="form-select" asp-items="ViewBag.MembershipID"></select>
+                        <span asp-validation-for="MembershipID" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="JoinDate" class="form-label fw-bold"></label>
+                    <input asp-for="JoinDate" class="form-control" type="date" />
+                    <span asp-validation-for="JoinDate" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary px-4 shadow-sm">Save Changes</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary px-4">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

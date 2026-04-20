@@ -1,0 +1,57 @@
+﻿@model GymManagementSystem.Models.MemberWorkoutPlan
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-primary text-white py-3">
+                    <h4 class="mb-0"><i class="bi bi-pencil-square"></i> Edit Member Plan Assignment</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Member Name</label>
+                                <select asp-for="MemberID" class="form-select border-primary" asp-items="ViewBag.Members">
+                                    <option value="">-- Select Member --</option>
+                                </select>
+                                <span asp-validation-for="MemberID" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Workout Plan</label>
+                                <select asp-for="PlanID" class="form-select border-primary" asp-items="ViewBag.Plans">
+                                    <option value="">-- Select Plan --</option>
+                                </select>
+                                <span asp-validation-for="PlanID" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="StartDate" class="form-label fw-bold">Start Date</label>
+                                <input asp-for="StartDate" class="form-control" type="date" />
+                                <span asp-validation-for="StartDate" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="EndDate" class="form-label fw-bold">End Date (Optional)</label>
+                                <input asp-for="EndDate" class="form-control" type="date" />
+                                <span asp-validation-for="EndDate" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                            <a asp-action="Index" class="btn btn-outline-secondary px-4">Cancel</a>
+                            <button type="submit" class="btn btn-primary px-5 shadow-sm">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

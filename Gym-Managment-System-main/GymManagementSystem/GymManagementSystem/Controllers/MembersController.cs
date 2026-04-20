@@ -11,6 +11,7 @@ namespace GymManagementSystem.Controllers
         private readonly GymDbContext _context;
         public MembersController(GymDbContext context) { _context = context; }
 
+        // 1. عرض قائمة الأعضاء
         public async Task<IActionResult> Index()
         {
             var members = await _context.Members
@@ -19,10 +20,9 @@ namespace GymManagementSystem.Controllers
             return View(members);
         }
 
+        // 2. صفحة إضافة عضو جديد
         public IActionResult Create()
         {
-            // التصحيح هنا: لازم نستخدم MembershipID و MembershipName (أو النوع المتاح عندك)
-            // تأكد من أسماء الأعمدة في جدول Membership (غالباً MembershipID و Type)
             ViewBag.MembershipList = new SelectList(_context.Memberships, "MembershipID", "Type");
             return View();
         }
@@ -31,7 +31,7 @@ namespace GymManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Member memberObj)
         {
-            // حذف التحقق من العلاقات لمنع الـ Validation Error
+            // تنظيف الـ Validation من العلاقات المعقدة
             ModelState.Remove("Membership");
             ModelState.Remove("MemberWorkoutPlans");
             ModelState.Remove("Payments");
@@ -43,11 +43,54 @@ namespace GymManagementSystem.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            // التصحيح هنا أيضاً: استخدام الاسم الصحيح MembershipID
             ViewBag.MembershipList = new SelectList(_context.Memberships, "MembershipID", "Type", memberObj.MembershipID);
             return View(memberObj);
         }
 
+        // 3. صفحة تعديل عضو (GET)
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var member = await _context.Members.FindAsync(id);
+            if (member == null) return NotFound();
+
+            ViewBag.MembershipList = new SelectList(_context.Memberships, "MembershipID", "Type", member.MembershipID);
+            return View(member);
+        }
+
+        // 4. حفظ تعديلات العضو (POST)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Member memberObj)
+        {
+            if (id != memberObj.MemberID) return NotFound();
+
+            // نفس تنظيف الـ Validation عشان الـ Edit ميضربش
+            ModelState.Remove("Membership");
+            ModelState.Remove("MemberWorkoutPlans");
+            ModelState.Remove("Payments");
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(memberObj);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!MemberExists(memberObj.MemberID)) return NotFound();
+                    else throw;
+                }
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.MembershipList = new SelectList(_context.Memberships, "MembershipID", "Type", memberObj.MembershipID);
+            return View(memberObj);
+        }
+
+        // 5. صفحة تأكيد الحذف (GET)
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -61,6 +104,7 @@ namespace GymManagementSystem.Controllers
             return View(member);
         }
 
+        // 6. تنفيذ الحذف الفعلي (POST)
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -72,6 +116,11 @@ namespace GymManagementSystem.Controllers
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool MemberExists(int id)
+        {
+            return _context.Members.Any(e => e.MemberID == id);
         }
     }
 }

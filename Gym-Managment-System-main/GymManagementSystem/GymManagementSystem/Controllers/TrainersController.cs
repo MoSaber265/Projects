@@ -10,21 +10,20 @@ namespace GymManagementSystem.Controllers
         private readonly GymDbContext _context;
         public TrainersController(GymDbContext context) { _context = context; }
 
-        // Index: عرض المدربين بترتيب أبجدي أو حسب الراتب (اختياري)
+        // 1. Index: عرض المدربين بترتيب أبجدي
         public async Task<IActionResult> Index()
         {
             return View(await _context.Trainers.OrderBy(t => t.Name).ToListAsync());
         }
 
-        // Create (GET)
+        // 2. Create (GET)
         public IActionResult Create() => View();
 
-        // Create (POST)
+        // 3. Create (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Trainer trainer)
         {
-            // شلنا الـ Collections من حسابات الـ Validation عشان الفورم تتبعت صح
             ModelState.Remove("WorkSchedules");
             ModelState.Remove("WorkoutPlans");
 
@@ -37,7 +36,45 @@ namespace GymManagementSystem.Controllers
             return View(trainer);
         }
 
-        // Delete (GET)
+        // 4. Edit (GET): فتح صفحة التعديل
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var trainer = await _context.Trainers.FindAsync(id);
+            if (trainer == null) return NotFound();
+
+            return View(trainer);
+        }
+
+        // 5. Edit (POST): حفظ التعديلات
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Trainer trainer)
+        {
+            if (id != trainer.TrainerID) return NotFound();
+
+            ModelState.Remove("WorkSchedules");
+            ModelState.Remove("WorkoutPlans");
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(trainer);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TrainerExists(trainer.TrainerID)) return NotFound();
+                    else throw;
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(trainer);
+        }
+
+        // 6. Delete (GET)
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -50,12 +87,11 @@ namespace GymManagementSystem.Controllers
             return View(trainer);
         }
 
-        // Delete (POST)
+        // 7. Delete (POST)
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            // استخدام FirstOrDefaultAsync هنا أضمن أحياناً من FindAsync في علاقات الجداول
             var trainer = await _context.Trainers.FirstOrDefaultAsync(t => t.TrainerID == id);
 
             if (trainer != null)
@@ -64,6 +100,11 @@ namespace GymManagementSystem.Controllers
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool TrainerExists(int id)
+        {
+            return _context.Trainers.Any(e => e.TrainerID == id);
         }
     }
 }
