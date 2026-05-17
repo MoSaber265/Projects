@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses by Year | University LMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-dark: #0d625b;
+            --primary-light: #14b8a6;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: white;
+        }
+
+        .nav-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .nav-title span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--gray);
+        }
+
+        .btn-login {
+            padding: 10px 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(15, 118, 110, 0.3);
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 60px 5% 40px;
+            background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%);
+        }
+
+        .page-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .page-header h1 span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Year Tabs */
+        .tabs-container {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 0 5%;
+        }
+
+        .tabs-bar {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: var(--white);
+            padding: 8px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 130px;
+            padding: 14px 20px;
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+            background: #f0fdfa;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Courses Section */
+        .courses-section {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 5%;
+        }
+
+        .placeholder {
+            text-align: center;
+            padding: 80px 20px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 2px dashed #e2e8f0;
+        }
+
+        .placeholder.hidden {
+            display: none;
+        }
+
+        .placeholder-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .placeholder h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .placeholder p {
+            color: var(--gray);
+        }
+
+        .year-title {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .year-badge {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .year-title h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .course-count {
+            margin-left: auto;
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        /* Course Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 28px 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            animation: cardIn 0.5s ease both;
+        }
+
+        @keyframes cardIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+
+        .dept-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .dept-cs {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .dept-is {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .dept-ai {
+            background: #ede9fe;
+            color: #6b21a8;
+        }
+
+        .dept-sec {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .course-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .course-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .meta-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .meta-icon {
+            width: 24px;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .hours-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f0fdfa;
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid #ccfbf1;
+        }
+
+        /* Specializations Section */
+        .spec-section {
+            background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%);
+            padding: 80px 5%;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .spec-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .spec-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .spec-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .spec-header p {
+            color: var(--gray);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .spec-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .spec-card.cs-card { border-top-color: #3b82f6; }
+        .spec-card.is-card { border-top-color: #22c55e; }
+        .spec-card.ai-card { border-top-color: #8b5cf6; }
+        .spec-card.sec-card { border-top-color: #ef4444; }
+
+        .spec-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        .cs-icon { background: #dbeafe; color: #3b82f6; }
+        .is-icon { background: #dcfce7; color: #22c55e; }
+        .ai-icon { background: #ede9fe; color: #8b5cf6; }
+        .sec-icon { background: #fee2e2; color: #ef4444; }
+
+        .spec-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .spec-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            padding: 4px 10px;
+            background: #f1f5f9;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 5%;
+            background: var(--dark);
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: var(--primary-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-btn {
+                min-width: 100px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="home.html" class="nav-brand">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="nav-title">
+                EduPortal
+                <span>Academic Management System</span>
+            </div>
+        </a>
+        <a href="login.html" class="btn-login">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="page-badge">Academic Plan</div>
+        <h1>Courses <span>by Year</span></h1>
+        <p>Browse the academic curriculum for each year and explore course details, instructors, and departments</p>
+    </div>
+
+    <!-- Year Tabs -->
+    <div class="tabs-container">
+        <div class="tabs-bar">
+            <button class="tab-btn" data-year="1" onclick="selectYear(1)">
+                <i class="fas fa-book"></i> First Year
+            </button>
+            <button class="tab-btn" data-year="2" onclick="selectYear(2)">
+                <i class="fas fa-book-open"></i> Second Year
+            </button>
+            <button class="tab-btn" data-year="3" onclick="selectYear(3)">
+                <i class="fas fa-bookmark"></i> Third Year
+            </button>
+            <button class="tab-btn" data-year="4" onclick="selectYear(4)">
+                <i class="fas fa-star"></i> Fourth Year
+            </button>
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <div class="courses-section">
+        <!-- Placeholder -->
+        <div class="placeholder" id="placeholder">
+            <div class="placeholder-icon">📚</div>
+            <h3>Select a Year to View Courses</h3>
+            <p>Click one of the year buttons above to browse available courses</p>
+        </div>
+
+        <!-- Courses Display -->
+        <div id="courses-display" style="display:none;">
+            <div class="year-title">
+                <span class="year-badge" id="year-badge">First Year</span>
+                <h2 id="year-heading">Academic Courses</h2>
+                <span class="course-count" id="course-count"></span>
+            </div>
+            <div class="cards-grid" id="cards-grid"></div>
+        </div>
+    </div>
+
+    <!-- Specializations -->
+    <section class="spec-section">
+        <div class="spec-header">
+            <div class="spec-badge">Specializations</div>
+            <h2>Faculty Departments</h2>
+            <p>Four integrated specializations to prepare you for excellence in the digital world</p>
+        </div>
+        <div class="spec-grid">
+            <div class="spec-card cs-card">
+                <div class="spec-icon cs-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Computer Science</h3>
+                <p>Focuses on theoretical and practical foundations of computing — from algorithms and data structures to operating systems and networks.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Algorithms</span>
+                    <span class="skill-tag">OS</span>
+                    <span class="skill-tag">Networks</span>
+                </div>
+            </div>
+            <div class="spec-card is-card">
+                <div class="spec-icon is-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Information Systems</h3>
+                <p>Bridges technology and business by designing and managing enterprise systems that support strategic decision-making.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Databases</span>
+                    <span class="skill-tag">ERP</span>
+                    <span class="skill-tag">Business Analysis</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+            </div>
+            <div class="spec-card ai-card">
+                <div class="spec-icon ai-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Artificial Intelligence</h3>
+                <p>Covers machine learning, deep learning, NLP, and computer vision to build intelligent systems.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">Python</span>
+                </div>
+            </div>
+            <div class="spec-card sec-card">
+                <div class="spec-icon sec-icon">
+                    <i class="fas fa-shield-haltered"></i>
+                </div>
+                <h3>Cybersecurity</h3>
+                <p>Prepares students to protect systems and data from cyberattacks through security tools and penetration testing.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Ethical Hacking</span>
+                    <span class="skill-tag">Cryptography</span>
+                    <span class="skill-tag">Forensics</span>
+                    <span class="skill-tag">Network Security</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 <strong>EduPortal</strong> — University Learning Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Department mapping
+        const deptMap = {
+            cs: { label: 'Computer Science', cls: 'dept-cs', icon: '💻' },
+            is: { label: 'Information Systems', cls: 'dept-is', icon: '🗄️' },
+            ai: { label: 'Artificial Intelligence', cls: 'dept-ai', icon: '🤖' },
+            sec: { label: 'Cybersecurity', cls: 'dept-sec', icon: '🔒' }
+        };
+
+        const yearNames = ['', 'First Year', 'Second Year', 'Third Year', 'Fourth Year'];
+
+        // Courses data
+        const coursesData = {
+            1: [
+                { name: 'Introduction to Programming', doctor: 'Dr. Ahmed Sami Mahmoud', dept: 'cs', hours: 3 },
+                { name: 'Computer Mathematics 1', doctor: 'Dr. Mona Abdelrahman', dept: 'is', hours: 3 },
+                { name: 'Computer & Internet Basics', doctor: 'Dr. Khaled Omar Farouq', dept: 'cs', hours: 2 },
+                { name: 'Technical English', doctor: 'Dr. Nihad Mostafa Ibrahim', dept: 'is', hours: 2 },
+                { name: 'Logic & Problem Solving', doctor: 'Dr. Samar Ali Ridwan', dept: 'ai', hours: 3 },
+                { name: 'Discrete Mathematics', doctor: 'Dr. Youssef Maher Taher', dept: 'cs', hours: 3 },
+            ],
+            2: [
+                { name: 'Data Structures & Algorithms', doctor: 'Dr. Mohamed Nasser Eldin', dept: 'cs', hours: 3 },
+                { name: 'Object-Oriented Programming', doctor: 'Dr. Rania Hussein Awad', dept: 'cs', hours: 3 },
+                { name: 'Database 1', doctor: 'Dr. Tarek Abdullah Salim', dept: 'is', hours: 3 },
+                { name: 'Operating Systems', doctor: 'Dr. Iman Fathi Yousef', dept: 'cs', hours: 3 },
+                { name: 'Computer Networks', doctor: 'Dr. Hatem Salah Elnajjar', dept: 'sec', hours: 3 },
+                { name: 'Numerical Analysis', doctor: 'Dr. Ola Mahmoud Aziz', dept: 'ai', hours: 3 },
+            ],
+            3: [
+                { name: 'Artificial Intelligence', doctor: 'Dr. Bassem Yasser Omran', dept: 'ai', hours: 3 },
+                { name: 'Software Engineering', doctor: 'Dr. Dina Walid Hassan', dept: 'cs', hours: 3 },
+                { name: 'Database 2 (Advanced)', doctor: 'Dr. Tarek Abdullah Salim', dept: 'is', hours: 3 },
+                { name: 'Information & Network Security', doctor: 'Dr. Amir Sultan Farag', dept: 'sec', hours: 3 },
+                { name: 'Systems Analysis & Design', doctor: 'Dr. Hala Mansour Darwish', dept: 'is', hours: 3 },
+                { name: 'Human Computer Interaction', doctor: 'Dr. Nivin Gamal Elsaeed', dept: 'cs', hours: 2 },
+                { name: 'Machine Learning', doctor: 'Dr. Bassem Yasser Omran', dept: 'ai', hours: 3 },
+            ],
+            4: [
+                { name: 'Deep Learning', doctor: 'Dr. Sherif Hamdi Kamel', dept: 'ai', hours: 3 },
+                { name: 'Advanced Cybersecurity', doctor: 'Dr. Amir Sultan Farag', dept: 'sec', hours: 3 },
+                { name: 'Cloud Computing', doctor: 'Dr. Walid Mamdouh Helmy', dept: 'is', hours: 3 },
+                { name: 'Natural Language Processing', doctor: 'Dr. Ghada Samir Hegazy', dept: 'ai', hours: 3 },
+                { name: 'Graduation Project 1', doctor: 'Dr. Hala Mansour Darwish', dept: 'cs', hours: 2 },
+                { name: 'Graduation Project 2', doctor: 'Dr. Hala Mansour Darwish', dept: 'cs', hours: 2 },
+                { name: 'Computing Ethics & Law', doctor: 'Dr. Sawsan Adel Essam', dept: 'is', hours: 2 },
+            ]
+        };
+
+        let activeYear = null;
+
+        function selectYear(year) {
+            if (activeYear === year) return;
+            activeYear = year;
+
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.toggle('active', +btn.dataset.year === year);
+            });
+
+            // Show courses display, hide placeholder
+            document.getElementById('placeholder').classList.add('hidden');
+            const display = document.getElementById('courses-display');
+            display.style.display = 'block';
+
+            // Update heading
+            document.getElementById('year-badge').textContent = yearNames[year];
+            document.getElementById('year-heading').textContent = 'Academic Courses';
+            const courses = coursesData[year];
+            document.getElementById('course-count').textContent = `${courses.length} courses`;
+
+            // Render cards
+            const grid = document.getElementById('cards-grid');
+            grid.innerHTML = '';
+            
+            courses.forEach((c, i) => {
+                const dept = deptMap[c.dept];
+                const card = document.createElement('div');
+                card.className = 'course-card';
+                card.style.animationDelay = `${i * 60}ms`;
+                
+                card.innerHTML = `
+                    <span class="hours-badge">${c.hours} hrs</span>
+                    <div class="dept-badge ${dept.cls}">${dept.icon} ${dept.label}</div>
+                    <div class="course-name">${c.name}</div>
+                    <div class="course-meta">
+                        <div class="meta-row">
+                            <span class="meta-icon"><i class="fas fa-user"></i></span>
+                            <span>${c.doctor}</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-icon"><i class="fas fa-calendar-alt"></i></span>
+                            <span>${yearNames[year]} — Semester</span>
+                        </div>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+
+            // Smooth scroll
+            setTimeout(() => {
+                display.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+{
+  "testStudents": [
+    {
+      "name": "أحمد محمد علي",
+      "universityId": "20230001",
+      "email": "ahmed.mohamed@university.edu",
+      "password": "password123",
+      "role": "student",
+      "department": "Computer Science",
+      "level": 2,
+      "semester": "Fall 2024"
+    },
+    {
+      "name": "سارة أحمد حسن",
+      "universityId": "20230002",
+      "email": "sara.ahmed@university.edu",
+      "password": "password123",
+      "role": "student",
+      "department": "Information Systems",
+      "level": 3,
+      "semester": "Fall 2024"
+    },
+    {
+      "name": "محمد خالد عبدالله",
+      "universityId": "20230003",
+      "email": "mohamed.khaled@university.edu",
+      "password": "password123",
+      "role": "student",
+      "department": "Computer Science",
+      "level": 4,
+      "semester": "Spring 2025"
+    },
+    {
+      "name": "فاطمة محمود إبراهيم",
+      "universityId": "20230004",
+      "email": "fatima.mahmoud@university.edu",
+      "password": "password123",
+      "role": "student",
+      "department": "Information Systems",
+      "level": 1,
+      "semester": "Fall 2024"
+    },
+    {
+      "name": "عمر يوسف أحمد",
+      "universityId": "20230005",
+      "email": "omar.youssef@university.edu",
+      "password": "password123",
+      "role": "student",
+      "department": "Computer Science",
+      "level": 2,
+      "semester": "Spring 2025"
+    },
+    {
+      "name": "نور الدين سامي",
+      "universityId": "20230006",
+      "email": "noor.sami@university.edu",
+      "password": "password123",
+      "role": "student",
+      "department": "Computer Science",
+      "level": 3,
+      "semester": "Fall 2024"
+    },
+    {
+      "name": "ليلى حسن محمد",
+      "universityId": "20230007",
+      "email": "layla.hassan@university.edu",
+      "password": "password123",
+      "role": "student",
+      "department": "Information Systems",
+      "level": 4,
+      "semester": "Spring 2025"
+    },
+    {
+      "name": "كريم عبدالرحمن علي",
+      "universityId": "20230008",
+      "email": "kareem.abdelrahman@university.edu",
+      "password": "password123",
+      "role": "student",
+      "department": "Computer Science",
+      "level": 1,
+      "semester": "Fall 2024"
+    },
+    {
+      "name": "منى سعيد محمود",
+      "universityId": "20230009",
+      "email": "mona.saeed@university.edu",
+      "password": "password123",
+      "role": "student",
+      "department": "Information Systems",
+      "level": 2,
+      "semester": "Spring 2025"
+    },
+    {
+      "name": "ياسر كمال الدين",
+      "universityId": "20230010",
+      "email": "yasser.kamal@university.edu",
+      "password": "password123",
+      "role": "student",
+      "department": "Computer Science",
+      "level": 3,
+      "semester": "Fall 2024"
+    }
+  ],
+  "testCourses": [
+    {
+      "title": "Introduction to Programming",
+      "code": "CS101",
+      "department": "Computer Science",
+      "level": 1,
+      "semester": "Fall 2024"
+    },
+    {
+      "title": "Database Systems",
+      "code": "CS201",
+      "department": "Computer Science",
+      "level": 2,
+      "semester": "Fall 2024"
+    },
+    {
+      "title": "Web Development",
+      "code": "IS301",
+      "department": "Information Systems",
+      "level": 3,
+      "semester": "Spring 2025"
+    },
+    {
+      "title": "Software Engineering",
+      "code": "CS401",
+      "department": "Computer Science",
+      "level": 4,
+      "semester": "Spring 2025"
+    }
+  ],
+  "testDoctor": {
+    "name": "د. محمد أحمد",
+    "universityId": "DOC001",
+    "email": "dr.mohamed@university.edu",
+    "password": "password123",
+    "role": "doctor"
+  }
+}

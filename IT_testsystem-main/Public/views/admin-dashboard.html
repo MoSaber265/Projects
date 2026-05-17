@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | University LMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-light: #14b8a6;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: var(--dark);
+            color: white;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .sidebar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-light);
+        }
+
+        .nav-item {
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 8px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: rgba(20, 184, 166, 0.15);
+            color: var(--primary-light);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 260px;
+            width: calc(100% - 260px);
+            padding: 30px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0fdfa;
+            border-radius: 12px;
+            color: var(--primary);
+        }
+
+        .stat-info h4 {
+            color: var(--gray);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .stat-info p {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .card-header {
+            border-bottom: 1px solid #f1f5f9;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        select,
+        input {
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            width: 100%;
+            margin-top: 5px;
+            transition: 0.2s;
+        }
+
+        select:focus,
+        input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0d625b;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-warning {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-logout {
+            background: #fee2e2;
+            color: var(--danger);
+        }
+
+        .btn-logout:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f8fafc;
+            padding: 15px;
+            text-align: left;
+            color: var(--gray);
+            font-weight: 600;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: middle;
+        }
+
+        tr:hover {
+            background-color: #fcfcfd;
+        }
+
+        .message {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            padding: 15px 25px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transform: translateX(200%);
+            transition: 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        .message.show {
+            transform: translateX(0);
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-success { background: #dcfce7; color: #166534; }
+        .badge-warning { background: #fef3c7; color: #92400e; }
+        .badge-danger { background: #fee2e2; color: #991b1b; }
+        .badge-info { background: #dbeafe; color: #1e40af; }
+        .badge-purple { background: #f3e8ff; color: #6b21a8; }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            width: 95%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-shield-haltered"></i>
+            <span>Admin Panel</span>
+        </div>
+        <a href="#" class="nav-item active" onclick="switchTab(event, 'users')">
+            <i class="fas fa-users"></i> Manage Users
+        </a>
+        <a href="#" class="nav-item" onclick="switchTab(event, 'courses')">
+            <i class="fas fa-book"></i> Manage Courses
+        </a>
+        <div style="margin-top: 100px; border-top: 1px solid #475569; padding-top: 20px;">
+            <button class="btn btn-logout" style="width: 100%;" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <div>
+                <h1 style="font-weight: 700;">Admin Dashboard</h1>
+                <p style="color: var(--gray);">System Management & Control</p>
+            </div>
+            <div class="profile-area">
+                <i class="fas fa-user-shield fa-lg" style="color: var(--primary);"></i>
+                <span id="userName" style="font-weight: 600;">Admin</span>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+                <div class="stat-info">
+                    <h4>Students</h4>
+                    <p id="stat-students">0</p>
+                </div>
+            </div>
+            <div class="stat-card" style="border-left-color: var(--accent);">
+                <div class="stat-icon" style="background:#fef3c7; color:var(--accent);">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="stat-info">
+                    <h4>Doctors</h4>
+                    <p id="stat-doctors">0</p>
+                </div>
+            </div>
+            <div class="stat-card" style="border-left-color: var(--success);">
+                <div class="stat-icon" style="background:#dcfce7; color:var(--success);">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="stat-info">
+                    <h4>Courses</h4>
+                    <p id="stat-courses">0</p>
+                </div>
+            </div>
+            <div class="stat-card" style="border-left-color: #8b5cf6;">
+                <div class="stat-icon" style="background:#ede9fe; color:#8b5cf6;">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="stat-info">
+                    <h4>Advisors</h4>
+                    <p id="stat-advisors">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 1: Users Management -->
+        <div id="usersTab" class="tab-content active">
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-users" style="color:var(--primary); margin-right:10px;"></i>User Accounts</h3>
+                    <button class="btn btn-primary btn-sm" onclick="openAddUserModal()">
+                        <i class="fas fa-plus"></i> Add User
+                    </button>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>University ID</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <tr><td colspan="5" style="text-align:center; padding:40px;">Loading users...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Courses Management -->
+        <div id="coursesTab" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-book-open" style="color:var(--accent); margin-right:10px;"></i>All Courses</h3>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course Title</th>
+                                <th>Code</th>
+                                <th>Academic Year</th>
+                                <th>Semester</th>
+                            </tr>
+                        </thead>
+                        <tbody id="coursesTableBody">
+                            <tr><td colspan="4" style="text-align:center; padding:40px;">Loading courses...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit User Modal -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add New User</h3>
+                <button class="btn btn-sm btn-danger" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="userForm">
+                <input type="hidden" id="editUserId" />
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="formName" placeholder="Enter full name" required />
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="formEmail" placeholder="user@university.com" required />
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>University ID *</label>
+                        <input type="text" id="formUniId" placeholder="e.g., STU2024001" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Password *</label>
+                        <input type="password" id="formPassword" placeholder="Enter password" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Role *</label>
+                        <select id="formRole" onchange="toggleStudentFields()">
+                            <option value="student">Student</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="advisor">Advisor</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Department</label>
+                        <select id="formDepartment">
+                            <option value="General">General</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="IS">Information Systems</option>
+                            <option value="IT">Information Technology</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="studentFields">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Level</label>
+                            <select id="formLevel">
+                                <option value="1">Level 1</option>
+                                <option value="2">Level 2</option>
+                                <option value="3">Level 3</option>
+                                <option value="4">Level 4</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <select id="formSemester">
+                                <option value="First">First</option>
+                                <option value="Second">Second</option>
+                                <option value="Summer">Summer</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">
+                    <i class="fas fa-save"></i> Save User
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Message -->
+    <div id="message" class="message"></div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+        let currentUser = null;
+        let allUsers = [];
+        let isEditing = false;
+
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', async function() {
+            const userData = localStorage.getItem('user');
+            if (!userData) {
+                window.location.href = '/login.html';
+                return;
+            }
+
+            currentUser = JSON.parse(userData);
+            if (currentUser.role !== 'admin') {
+                window.location.href = '/login.html';
+                return;
+            }
+
+            document.getElementById('userName').textContent = currentUser.name;
+            await loadAllData();
+        });
+
+        // ==================== LOAD ALL DATA ====================
+        async function loadAllData() {
+            await Promise.all([loadUsers(), loadCourses(), loadStats()]);
+        }
+
+        async function loadStats() {
+            try {
+                const [usersRes, coursesRes] = await Promise.all([
+                    fetch(`${API_BASE}/auth/users`),
+                    fetch(`${API_BASE}/courses`)
+                ]);
+
+                const usersData = await usersRes.json();
+                const coursesData = await coursesRes.json();
+
+                if (usersData.success) {
+                    const users = usersData.users;
+                    document.getElementById('stat-students').textContent = users.filter(u => u.role === 'student').length;
+                    document.getElementById('stat-doctors').textContent = users.filter(u => u.role === 'doctor').length;
+                    document.getElementById('stat-advisors').textContent = users.filter(u => u.role === 'advisor').length;
+                }
+
+                if (coursesData.success) {
+                    document.getElementById('stat-courses').textContent = coursesData.courses.length;
+                }
+            } catch (error) {
+                console.error('❌ Error loading stats:', error);
+            }
+        }
+
+        async function loadUsers() {
+            try {
+                const response = await fetch(`${API_BASE}/auth/users`);
+                const data = await response.json();
+
+                if (data.success) {
+                    allUsers = data.users;
+                    renderUsersTable(data.users);
+                }
+            } catch (error) {
+                console.error('❌ Error loading users:', error);
+                document.getElementById('usersTableBody').innerHTML = 
+                    '<tr><td colspan="5" style="text-align:center; color:var(--danger);">Failed to load users</td></tr>';
+            }
+        }
+
+        function renderUsersTable(users) {
+            const tbody = document.getElementById('usersTableBody');
+            
+            if (!users || users.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No users found</td></tr>';
+                return;
+            }
+
+            const roleBadges = {
+                'student': 'badge-success',
+                'doctor': 'badge-info',
+                'advisor': 'badge-warning',
+                'admin': 'badge-purple'
+            };
+
+            tbody.innerHTML = users.map(user => `
+                <tr>
+                    <td><strong>${user.name}</strong></td>
+                    <td><code>${user.universityId || 'N/A'}</code></td>
+                    <td>${user.email}</td>
+                    <td><span class="badge ${roleBadges[user.role] || 'badge-info'}">${user.role}</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn btn-warning btn-sm" onclick="editUser('${user._id}')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            ${user.role !== 'admin' ? `
+                                <button class="btn btn-danger btn-sm" onclick="deleteUser('${user._id}')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            ` : ''}
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function loadCourses() {
+            try {
+                const response = await fetch(`${API_BASE}/courses`);
+                const data = await response.json();
+
+                if (data.success) {
+                    renderCoursesTable(data.courses);
+                }
+            } catch (error) {
+                console.error('❌ Error loading courses:', error);
+                document.getElementById('coursesTableBody').innerHTML = 
+                    '<tr><td colspan="4" style="text-align:center; color:var(--danger);">Failed to load courses</td></tr>';
+            }
+        }
+
+        function renderCoursesTable(courses) {
+            const tbody = document.getElementById('coursesTableBody');
+            
+            if (!courses || courses.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;">No courses found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = courses.map(course => `
+                <tr>
+                    <td><strong>${course.title}</strong></td>
+                    <td><span class="badge badge-info">${course.code}</span></td>
+                    <td>Year ${course.academicYear || 'N/A'}</td>
+                    <td>Semester ${course.semester || 'N/A'}</td>
+                </tr>
+            `).join('');
+        }
+
+        // ==================== MODAL OPERATIONS ====================
+        function openAddUserModal() {
+            isEditing = false;
+            document.getElementById('modalTitle').textContent = 'Add New User';
+            document.getElementById('userForm').reset();
+            document.getElementById('editUserId').value = '';
+            document.getElementById('formPassword').required = true;
+            document.getElementById('formPassword').placeholder = 'Enter password';
+            document.getElementById('userModal').classList.add('show');
+            toggleStudentFields();
+        }
+
+        function editUser(userId) {
+            const user = allUsers.find(u => u._id === userId);
+            if (!user) return;
+
+            isEditing = true;
+            document.getElementById('modalTitle').textContent = 'Edit User';
+            document.getElementById('editUserId').value = user._id;
+            document.getElementById('formName').value = user.name || '';
+            document.getElementById('formEmail').value = user.email || '';
+            document.getElementById('formUniId').value = user.universityId || '';
+            document.getElementById('formRole').value = user.role || 'student';
+            document.getElementById('formPassword').required = false;
+            document.getElementById('formPassword').placeholder = 'Leave empty to keep current';
+            document.getElementById('formPassword').value = '';
+            document.getElementById('userModal').classList.add('show');
+            toggleStudentFields();
+        }
+
+        function closeModal() {
+            document.getElementById('userModal').classList.remove('show');
+        }
+
+        function toggleStudentFields() {
+            const role = document.getElementById('formRole').value;
+            const studentFields = document.getElementById('studentFields');
+            studentFields.style.display = role === 'student' ? 'block' : 'none';
+        }
+
+        // ==================== FORM SUBMISSION ====================
+        document.getElementById('userForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const userId = document.getElementById('editUserId').value;
+            const formData = {
+                name: document.getElementById('formName').value.trim(),
+                email: document.getElementById('formEmail').value.trim(),
+                universityId: document.getElementById('formUniId').value.trim(),
+                role: document.getElementById('formRole').value,
+                department: document.getElementById('formDepartment').value,
+                level: parseInt(document.getElementById('formLevel').value),
+                semester: document.getElementById('formSemester').value
+            };
+
+            const password = document.getElementById('formPassword').value.trim();
+            if (password) {
+                formData.password = password;
+            }
+
+            if (!formData.name || !formData.email || !formData.universityId) {
+                showMessage('Please fill all required fields', true);
+                return;
+            }
+
+            if (!isEditing && !password) {
+                showMessage('Password is required for new users', true);
+                return;
+            }
+
+            try {
+                const url = isEditing 
+                    ? `${API_BASE}/auth/update-user/${userId}`
+                    : `${API_BASE}/auth/add-user`;
+                
+                const method = isEditing ? 'PUT' : 'POST';
+
+                const response = await fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage(isEditing ? '✅ User updated successfully' : '✅ User added successfully');
+                    closeModal();
+                    await loadAllData();
+                } else {
+                    showMessage(data.message || 'Operation failed', true);
+                }
+            } catch (error) {
+                console.error('❌ Form submission error:', error);
+                showMessage('Error: ' + error.message, true);
+            }
+        });
+
+        // ==================== DELETE USER ====================
+        async function deleteUser(userId) {
+            if (!confirm('Are you sure you want to delete this user? This action cannot be undone.')) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/auth/delete-user/${userId}`, {
+                    method: 'DELETE'
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage('✅ User deleted successfully');
+                    await loadAllData();
+                } else {
+                    showMessage(data.message || 'Delete failed', true);
+                }
+            } catch (error) {
+                console.error('❌ Delete error:', error);
+                showMessage('Error: ' + error.message, true);
+            }
+        }
+
+        // ==================== TAB SWITCHING ====================
+        function switchTab(e, tabName) {
+            if (e) e.preventDefault();
+
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            if (e && e.currentTarget) e.currentTarget.classList.add('active');
+
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            const targetTab = document.getElementById(`${tabName}Tab`);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+        }
+
+        // ==================== UI HELPERS ====================
+        function showMessage(text, isError = false) {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.style.backgroundColor = isError ? 'var(--danger)' : 'var(--success)';
+            msg.classList.add('show');
+            setTimeout(() => msg.classList.remove('show'), 3500);
+        }
+
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.href = '/login.html';
+        }
+
+        // Close modal on outside click
+        document.getElementById('userModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPortal | University Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-dark: #0d625b;
+            --primary-light: #14b8a6;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 45px;
+            height: 45px;
+            overflow: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .nav-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .nav-title span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--gray);
+        }
+
+        .btn-login {
+            padding: 10px 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(15, 118, 110, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 5% 60px;
+            background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%);
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            animation: fadeUp 0.7s 0.1s ease both;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            max-width: 650px;
+            margin: 0 auto 38px;
+            animation: fadeUp 0.7s 0.2s ease both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 0.7s 0.3s ease both;
+        }
+
+        .btn-primary {
+            padding: 14px 36px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 6px 20px rgba(15, 118, 110, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(15, 118, 110, 0.4);
+        }
+
+        .btn-outline {
+            padding: 14px 36px;
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            background: #f0fdfa;
+            border-color: var(--primary-dark);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 14px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Vision & Mission */
+        .vm-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%);
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .vm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .vm-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 36px 32px;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .vm-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .vm-card.mission {
+            border-top-color: var(--accent);
+        }
+
+        .vm-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .vision .vm-icon {
+            background: #f0fdfa;
+            color: var(--primary);
+        }
+
+        .mission .vm-icon {
+            background: #fef3c7;
+            color: var(--accent);
+        }
+
+        .vm-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .vm-card p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* Activities Section */
+        .activities-section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .activity-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px 26px;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .activity-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .activity-date {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            background: #f0fdfa;
+            color: var(--primary);
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+
+        .activity-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .activity-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 5%;
+            background: var(--dark);
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: var(--primary-light);
+        }
+
+        footer p {
+            margin-top: 8px;
+            font-size: 0.8rem;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .nav-title span {
+                display: none;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="home.html" class="nav-brand">
+            <div class="nav-logo">
+                <img src="../images/Logo.png" alt="EduPortal Logo">
+            </div>
+            <div class="nav-title">
+                EduPortal
+                <span>University Management System</span>
+            </div>
+        </a>
+        <a href="login.html" class="btn-login">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Welcome to the Academic Portal
+        </div>
+        <h1>
+            Faculty of <span class="highlight">Computing</span> & <span class="highlight">Information Systems</span>
+        </h1>
+        <p>
+            We strive to graduate distinguished human cadres in the fields of computing and information technology, supported by solid scientific foundations and high-level practical competencies to meet the demands of the digital labor market.
+        </p>
+        <div class="hero-cta">
+            <a href="login.html" class="btn-primary">
+                <i class="fas fa-rocket"></i> Get Started
+            </a>
+            <a href="courses-by-year.html" class="btn-outline">
+                <i class="fas fa-book"></i> Browse Courses
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <div class="stat-icon">👨‍🎓</div>
+                <div class="stat-number" data-target="3200">0</div>
+                <div class="stat-label">Enrolled Students</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-icon">👨‍🏫</div>
+                <div class="stat-number" data-target="145">0</div>
+                <div class="stat-label">Faculty Members</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-icon">📘</div>
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">Academic Majors</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">Employment Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="vm-section">
+        <div class="section-header reveal">
+            <span class="section-badge">Our Identity</span>
+            <h2>Vision & Mission</h2>
+            <p>We believe that quality technical education is the gateway to comprehensive digital transformation</p>
+        </div>
+        <div class="vm-grid">
+            <div class="vm-card vision reveal">
+                <div class="vm-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>
+                    To be a leading college in the region in the fields of computing and information systems, contributing to building an advanced knowledge society that keeps pace with technological transformations and leads digital entrepreneurship locally and regionally.
+                </p>
+            </div>
+            <div class="vm-card mission reveal">
+                <div class="vm-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>
+                    To provide integrated academic and applied education in computer and information disciplines, create a stimulating research environment for creativity and innovation, and qualify graduates capable of competing and serving the requirements of digital development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities -->
+    <section class="activities-section">
+        <div class="section-header reveal">
+            <span class="section-badge">Our Events</span>
+            <h2>College Activities</h2>
+            <p>Rich events that blend scientific creativity with practical application</p>
+        </div>
+        <div class="activities-grid">
+            <div class="activity-card reveal">
+                <div class="activity-icon">💡</div>
+                <span class="activity-date">May 2026</span>
+                <h3>Smart Solutions Hackathon</h3>
+                <p>An intensive 48-hour programming competition where students compete to build innovative technical solutions that address digital society challenges using artificial intelligence and data.</p>
+            </div>
+            <div class="activity-card reveal">
+                <div class="activity-icon">🛠️</div>
+                <span class="activity-date">April 2026</span>
+                <h3>Cybersecurity Workshop</h3>
+                <p>A series of hands-on workshops covering the latest security testing techniques, penetration testing, and combating electronic threats, supervised by industry experts.</p>
+            </div>
+            <div class="activity-card reveal">
+                <div class="activity-icon">🏅</div>
+                <span class="activity-date">March 2026</span>
+                <h3>Data Analysis Competition</h3>
+                <p>An analytical competition where participants use Python and Data Science techniques to extract valuable insights from real datasets and provide strategic recommendations.</p>
+            </div>
+            <div class="activity-card reveal">
+                <div class="activity-icon">🚀</div>
+                <span class="activity-date">June 2026</span>
+                <h3>Graduation Projects Expo</h3>
+                <p>An annual ceremony where fourth-year students present their graduation projects before academic committees and representatives from major tech companies for employment and partnership opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 <strong>EduPortal</strong> — All Rights Reserved</p>
+        <p>A comprehensive university management system serving students and faculty members</p>
+    </footer>
+
+    <script>
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, i * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Counter animation
+        const counters = document.querySelectorAll('.stat-number[data-target]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                
+                const el = entry.target;
+                const target = parseInt(el.dataset.target);
+                const suffix = target === 98 ? '%' : '+';
+                let start = 0;
+                const duration = 1800;
+                
+                const animate = (timestamp) => {
+                    if (!start) start = timestamp;
+                    const progress = Math.min((timestamp - start) / duration, 1);
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.round(ease * target);
+                    el.textContent = current.toLocaleString('en-US') + (progress >= 1 ? suffix : '');
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    }
+                };
+                
+                requestAnimationFrame(animate);
+                counterObserver.unobserve(el);
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => counterObserver.observe(c));
+    </script>
+</body>
+</html>
