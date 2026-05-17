@@ -1,0 +1,353 @@
+/* Reset el page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Amiri', serif;
+}
+
+/* حل سحري وشامل لدعم خلط العربي والانجليزي والأرقام تلقائياً في كل الصفحات */
+span, p, a, div, h1, h2, h3, li, td {
+    unicode-bidi: plaintext;
+    text-align: right;
+}
+
+/* Body style */
+body {
+    background: radial-gradient(circle, #444 0%, #111 55%, #000 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Logo fo2 3al ymeen */
+.top-right-logo {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 28px;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    padding-top: 70px;
+    text-align: center;
+}
+
+/* Hamburger header */
+.nav-header {
+    display: none;
+}
+
+/* Hamburger button */
+.menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    font-size: 28px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Links container */
+.nav-links {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 50px;
+    padding: 6px 16px;
+    gap: 12px;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Navbar links */
+.nav-links a {
+    color: #ddd;
+    text-decoration: none;
+    padding: 8px 22px;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: 0.3s;
+    text-align: center !important; /* ضمان توسط نصوص اللينكات دائمًا */
+}
+
+/* Hover 3ala links */
+.nav-links a:hover {
+    color: #fff;
+    background: rgba(212, 175, 55, 0.25);
+}
+
+/* Active link */
+.nav-links a.active {
+    background: rgba(212, 175, 55, 0.85);
+    color: #111;
+}
+
+/* Product section */
+.product-display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 20px;
+}
+
+/* Category title */
+.category-title {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+    opacity: 0.9;
+    text-align: center !important; /* لضمان توسط عنوان القسم دائماً */
+}
+
+/* Dots container */
+.dots-container {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+}
+
+/* Dot */
+.dot {
+    width: 12px;
+    height: 12px;
+    background: #555;
+    border-radius: 50%;
+}
+
+/* Active dot */
+.dot.active {
+    background: #d4af37;
+}
+
+/* Product card */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image glow */
+.image-glow {
+    position: relative;
+    margin: 25px 0;
+}
+
+/* Glow wara el product */
+.image-glow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+    height: 170px;
+    background: rgba(212, 175, 55, 0.25);
+    filter: blur(55px);
+    z-index: -1;
+}
+
+/* --- تعديل الصور لتصبح بارزة (3D effect) --- */
+.product-img {
+    height: 260px;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.product-img:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+}
+
+/* Product name */
+.product-name {
+    font-size: 38px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center !important; /* اسم المنتج يظل في المنتصف للفخامة */
+}
+
+/* Price */
+.price-container {
+    font-size: 25px;
+    margin-bottom: 25px;
+    text-align: center !important; /* حاوية السعر في المنتصف */
+}
+
+/* Current price */
+.current-price {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+/* Old price */
+.old-price {
+    color: #777;
+    text-decoration: line-through;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+/* Next button */
+.next-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    color: #fff;
+    padding: 10px 60px;
+    border-radius: 50px;
+    font-size: 22px;
+    cursor: pointer;
+    font-family: 'Amiri', serif;
+    transition: 0.3s;
+    margin: 5px;
+    text-align: center !important;
+}
+
+/* Next button hover */
+.next-btn:hover {
+    background: rgba(212, 175, 55, 0.25);
+    transform: translateY(-3px);
+}
+
+/* Cart buttons container */
+.action-buttons {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Cart button */
+.cart-btn {
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid #d4af37;
+    color: #fff;
+    padding: 8px 32px;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Amiri', serif;
+    text-align: center !important;
+}
+
+/* Bag circle */
+.bag-icon-circle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d4af37;
+    cursor: pointer;
+}
+
+/* Cart item */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* لضمان الاحتفاظ بالتوزيع المتناسق داخل كارت السلة وعدم تداخل نصوصه */
+.cart-item span, .cart-item div {
+    unicode-bidi: plaintext;
+}
+
+/* Item image (أيقونة العربة) */
+.item-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 1px solid #d4af37;
+    object-fit: contain;
+    padding: 5px;
+}
+
+/* Total Section */
+.total-section {
+    text-align: center !important; /* قسم المجموع الكلي يظل متوسطاً ومميزاً */
+    margin: 15px 0;
+    font-size: 22px;
+}
+
+/* Payment button */
+.payment-btn {
+    margin-top: 20px;
+    background: rgba(212, 175, 55, 0.3);
+    border: 1px solid #d4af37;
+    color: #fff;
+    padding: 10px 80px;
+    border-radius: 50px;
+    font-size: 22px;
+    cursor: pointer;
+    font-family: 'Amiri', serif;
+    transition: 0.3s;
+    text-align: center !important;
+}
+
+.payment-btn:hover {
+    background: rgba(212, 175, 55, 0.5);
+}
+
+/* Footer */
+.footer, .footer p {
+    padding: 18px;
+    text-align: center !important; /* إجبار الفوتر ونصوصه على التوسط دائماً */
+    color: rgba(212, 175, 55, 0.7);
+    font-size: 14px;
+}
+
+/* Media Queries (Responsive) المحدثة بالكامل للهامبروجر المنسدل */
+@media (max-width: 768px) {
+    .nav-header {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .menu-btn { 
+        display: block; 
+    }
+    .nav-links { 
+        display: none; 
+        flex-direction: column; 
+        width: 85%;
+        margin: auto;
+        border-radius: 20px;
+        padding: 15px;
+        gap: 5px;
+        background: rgba(0, 0, 0, 0.85);
+        border: 1px solid #d4af37;
+    }
+    .nav-links.show { 
+        display: flex; 
+    }
+    .nav-links a {
+        width: 100%;
+        text-align: center !important;
+        padding: 10px;
+        font-size: 18px;
+    }
+    .footer, .footer p {
+        text-align: center !important;
+    }
+}

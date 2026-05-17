@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أَبَا الْقَاسِم - عود مضاوي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/shared.css">
+    
+    <style>
+        /* تطبيق خط Amiri لضمان التناسق */
+        body, h1, h2, a, button, span, p, div {
+            font-family: 'Amiri', serif !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-right-logo">أَصَالَة</div>
+
+    <nav class="navbar">
+        <div class="nav-header">
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="Home.html">الرئيسية</a>
+            <a href="product1.html" class="active">المنتجات</a>
+            <a href="contact.html">اتصل بنا</a>
+        </div>
+    </nav>
+
+    <main class="product-display">
+        <h2 class="category-title">مجموعة العود الملكي </h2>
+        
+        <div class="dots-container">
+            <span class="dot"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+        </div>
+
+        <div class="product-card">
+            <div class="image-glow">
+                <img src="../Images/perfum_p2.png" alt="عود مضاوي" class="product-img">
+            </div>
+
+            <h1 class="product-name">عُود مَضَاوِي</h1>
+
+            <div class="price-container">
+                <span class="current-price">$700</span>
+                <span class="old-price">$750</span>
+            </div>
+        </div>
+
+        <button class="next-btn" onclick="window.location.href='product3.html'">
+            التالي
+        </button>
+
+        <button class="next-btn" onclick="window.location.href='product1.html'">
+            الرجوع
+        </button>
+
+        <div class="action-buttons">
+            <button class="cart-btn" onclick="window.location.href='sale.html'">
+                عربة
+            </button>
+
+            <div class="bag-icon-circle" onclick="window.location.href='sale.html'">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>ABA AL-QASIM HERITAGE PARFUMERIE</p>
+        <p>© 2026 أَبَا الْقَاسِم للعطور جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="../JS/main.js"></script>
+
+</body>
+</html>

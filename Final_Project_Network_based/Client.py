@@ -1,18 +1,20 @@
 import socket, threading, os, io, time
 from tkinter import *
 from tkinter import filedialog
-from PIL import Image
+from PIL import Image, ImageTk # ImageTk ضرورية لعرض الصور في الواجهة
 
-# 1. إعدادات الاتصال والبروتوكول الخاص (End of File)
-# TCP Socket [cite: 5, 89]
+# 1. إعدادات الاتصال والبروتوكول الخاص
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(('127.0.0.1', 5555))
 SEPARATOR = b"<SEP>"
-EOF = b"<END>" # بروتوكول خاص لاكتشاف نهاية الملف بدون إرسال الحجم [cite: 26]
+EOF = b"<END>"
+
+# لستة لحفظ مراجع الصور عشان متختفيش من الواجهة (Garbage Collection)
+image_refs = []
 
 # 2. وظائف معالجة البيانات (Media Processing)
 def compress_img(path):
-    """ضغط الصورة بجودة 20% قبل الإرسال [cite: 7, 65, 85]"""
+    """ضغط الصورة بجودة 20% قبل الإرسال"""
     img = Image.open(path)
     if img.mode != 'RGB': img = img.convert('RGB')
     out = io.BytesIO()
@@ -20,13 +22,36 @@ def compress_img(path):
     return out.getvalue()
 
 def send_data(type_flag, data):
-    """تغليف البيانات بالهيدر وعلامة النهاية [cite: 49]"""
+    """تغليف البيانات بالهيدر وعلامة النهاية"""
     packet = type_flag.encode() + SEPARATOR + data + EOF
     client.sendall(packet)
 
-# 3. وظائف الإرسال (Send Modules)
+# 3. وظائف الإرسال والعرض
+def display_msg(msg, align, is_image=False, img_bytes=None):
+    """تنسيق الرسائل (نصوص أو صور) يمين ويسار"""
+    side = E if align == "right" else W
+    color = "#dcf8c6" if align == "right" else "#ffffff"
+    
+    if is_image and img_bytes:
+        try:
+            # تحويل البايتات المستلمة لصورة يمكن عرضها
+            img_data = Image.open(io.BytesIO(img_bytes))
+            img_data.thumbnail((150, 150)) # تصغير المعاينة لشكل جمالي
+            photo = ImageTk.PhotoImage(img_data)
+            image_refs.append(photo) # حفظ المرجع في القائمة
+            
+            lbl = Label(msg_frame, image=photo, bg=color, padx=5, pady=5)
+            lbl.pack(anchor=side, pady=5, padx=10)
+        except:
+            Label(msg_frame, text="Error loading image", bg="red").pack(anchor=side)
+    else:
+        lbl = Label(msg_frame, text=msg, bg=color, wraplength=250, justify=LEFT, font=("Segoe UI Emoji", 10))
+        lbl.pack(anchor=side, pady=5, padx=10)
+    
+    chat_canvas.update_idletasks()
+    chat_canvas.yview_moveto(1.0) # سكرول تلقائي لأسفل
+
 def send_text_msg(event=None):
-    """إرسال النصوص بتشفير UTF-8 لدعم الإيموجي [cite: 6, 74]"""
     msg = entry_field.get()
     if msg:
         send_data("TEXT", msg.encode('utf-8'))
@@ -34,11 +59,9 @@ def send_text_msg(event=None):
         entry_field.delete(0, END)
 
 def add_emoji(emoji_char):
-    """إضافة الإيموجي المختار لخانة الكتابة"""
     entry_field.insert(END, emoji_char)
 
 def open_emoji_window():
-    """نافذة اختيار الإيموجي (WhatsApp Style)"""
     emoji_window = Toplevel(root)
     emoji_window.title("Emojis")
     emojis = ["😀", "😂", "❤️", "👍", "🔥", "✨", "😊", "😎", "🙌", "🎉"]
@@ -47,32 +70,24 @@ def open_emoji_window():
                command=lambda char=e: add_emoji(char)).grid(row=i//5, column=i%5, padx=5, pady=5)
 
 def select_and_send(mode):
-    """إرسال صور (مضغوطة/HD) أو ملفات وفيديو [cite: 7, 8, 9, 60, 80]"""
     path = filedialog.askopenfilename()
     if not path: return
     
     if mode == "IMG":
-        data = compress_img(path) # ضغط الصورة [cite: 7]
+        data = compress_img(path)
         send_data("IMGC", data)
+        display_msg("You sent an image", "right", is_image=True, img_bytes=data)
     elif mode == "HD":
-        with open(path, "rb") as f: send_data("IMG_HD", f.read()) # بدون ضغط (HD Button) [cite: 8]
+        with open(path, "rb") as f: 
+            data = f.read()
+            send_data("IMG_HD", data)
+            display_msg("You sent an HD image", "right", is_image=True, img_bytes=data)
     elif mode == "FILE":
-        with open(path, "rb") as f: send_data("FILE", f.read()) # ملفات/فيديو [cite: 9]
-    
-    display_msg(f"Sent {mode} file", "right")
+        with open(path, "rb") as f: send_data("FILE", f.read())
+        display_msg(f"You sent a file", "right")
 
-# 4. واجهة المستخدم وتنسيق الرسائل (GUI & Alignment)
-def display_msg(msg, align):
-    """تنسيق الرسائل يمين ويسار [cite: 11]"""
-    side = E if align == "right" else W
-    color = "#dcf8c6" if align == "right" else "#ffffff"
-    lbl = Label(msg_frame, text=msg, bg=color, wraplength=250, justify=LEFT, font=("Segoe UI Emoji", 10))
-    lbl.pack(anchor=side, pady=5, padx=10)
-    chat_canvas.update_idletasks()
-    chat_canvas.yview_moveto(1.0) # سكرول تلقائي [cite: 17]
-
+# 4. وظيفة الاستقبال (Threading)
 def receive():
-    """الاستقبال في خيط منفصل (Threading) [cite: 58, 68, 72, 91]"""
     buffer = b""
     while True:
         try:
@@ -81,18 +96,21 @@ def receive():
             buffer += chunk
             while EOF in buffer:
                 msg_data, buffer = buffer.split(EOF, 1)
-                header, content = msg_data.split(SEPARATOR, 1)
-                timestamp = time.strftime('%H:%M') # ميزة الوقت [cite: 18]
+                header_bin, content = msg_data.split(SEPARATOR, 1)
+                header = header_bin.decode()
+                timestamp = time.strftime('%H:%M')
                 
-                if header.decode() == "TEXT":
+                if header == "TEXT":
                     display_msg(f"[{timestamp}] User: {content.decode('utf-8')}", "left")
+                elif header in ["IMGC", "IMG_HD"]:
+                    display_msg(f"[{timestamp}] User sent an image", "left", is_image=True, img_bytes=content)
                 else:
-                    display_msg(f"[{timestamp}] {header.decode()} Received", "left")
+                    display_msg(f"[{timestamp}] {header} Received", "left")
         except: break
 
-# 5. بناء الواجهة (Tkinter Setup) [cite: 10, 42, 46, 90]
+# 5. بناء الواجهة (GUI)
 root = Tk()
-root.title("Chat App")
+root.title("Chat App Pro")
 root.geometry("400x600")
 
 chat_canvas = Canvas(root, bg="#ece5dd")

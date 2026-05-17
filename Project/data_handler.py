@@ -6,7 +6,7 @@ def load_and_clean_data(path):
     report = []
     
     # 1. Initial State
-    initial_shape = df.shape
+    initial_shape = df.shape #tuple (rows, columns)
     report.append(f"Initial Data Shape: {initial_shape[0]} rows and {initial_shape[1]} columns.")
     
     # 2. Handle Missing Values

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أَبَا الْقَاسِم - الشراء</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/shared.css">
+    
+    <style>
+        /* تطبيق خط Amiri لضمان الفخامة والتناسق */
+        body, h1, h2, span, button, a, div, p {
+            font-family: 'Amiri', serif !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-right-logo">أَصَالَة</div>
+
+    <nav class="navbar">
+        <div class="nav-header">
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="Home.html">الرئيسية</a>
+            <a href="product1.html" class="active">المنتجات</a>
+            <a href="contact.html">اتصل بنا</a>
+        </div>
+    </nav>
+
+    <main class="product-display">
+
+        <h2 class="category-title cart-title">عملية الشراء</h2>
+
+        <div class="cart-item">
+            <div class="item-info">
+                <img src="../Images/perfum_p1.png" alt="عود سلطان" class="item-img">
+                <span>عُود سُلْطَانْ</span>
+            </div>
+
+            <div class="quantity-control">
+                <button class="qty-btn minus">-</button>
+                <span class="quantity">0</span>
+                <button class="qty-btn plus">+</button>
+                <span class="item-price" data-price="300">$0</span>
+            </div>
+        </div>
+
+        <div class="cart-item">
+            <div class="item-info">
+                <img src="../Images/perfum_p2.png" alt="عود mضاوي" class="item-img">
+                <span>عُود مَضَاوِي</span>
+            </div>
+
+            <div class="quantity-control">
+                <button class="qty-btn minus">-</button>
+                <span class="quantity">0</span>
+                <button class="qty-btn plus">+</button>
+                <span class="item-price" data-price="700">$0</span>
+            </div>
+        </div>
+
+        <div class="cart-item">
+            <div class="item-info">
+                <img src="../Images/oud.png" alt="مسك العود" class="item-img">
+                <span>مِسْكُ العُودِ</span>
+            </div>
+
+            <div class="quantity-control">
+                <button class="qty-btn minus">-</button>
+                <span class="quantity">0</span>
+                <button class="qty-btn plus">+</button>
+                <span class="item-price" data-price="500">$0</span>
+            </div>
+        </div>
+
+        <div class="total-section">
+            المجموع الكلي :
+            <span id="total-price">$0</span>
+        </div>
+
+        <button class="payment-btn" id="paymentBtn">
+            الدفع
+        </button>
+
+        <button class="next-btn" onclick="window.location.href='contact.html'">
+            التالي
+        </button>
+    </main>
+
+    <footer class="footer">
+        <p>ABA AL-QASIM HERITAGE PARFUMERIE</p>
+        <p>© 2026 أَبَا الْقَاسِم للعطور جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="../JS/main.js"></script>
+</body>
+</html>

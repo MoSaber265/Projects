@@ -1,0 +1,313 @@
+/* Reset el page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Amiri', serif;
+}
+
+/* حل سحري وشامل لدعم خلط العربي والانجليزي والأرقام تلقائياً في كل الصفحات */
+span, p, a, div, h1, h2, h3, li, td {
+    unicode-bidi: plaintext;
+    text-align: right;
+}
+
+/* Body style */
+body {
+    background: radial-gradient(circle, #444 0%, #111 55%, #000 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Dokhan light effect fel background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 25% 35%, rgba(255, 255, 255, 0.12), transparent 28%),
+        radial-gradient(circle at 75% 60%, rgba(212, 175, 55, 0.10), transparent 25%),
+        radial-gradient(circle at 50% 85%, rgba(255, 255, 255, 0.08), transparent 30%);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Header */
+header {
+    width: 100%;
+    padding-top: 25px;
+}
+
+/* Logo fo2 3al ymeen */
+.top-right-logo {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    opacity: 0.9;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Navbar */
+.navbar {
+    padding-top: 75px;
+    text-align: center;
+}
+
+/* Hamburger header */
+.nav-header {
+    display: none;
+}
+
+/* Hamburger button */
+.menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    font-size: 28px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Links container */
+.nav-links {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 50px;
+    padding: 6px 16px;
+    gap: 12px;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Navbar links */
+.nav-links a {
+    color: #ddd;
+    text-decoration: none;
+    padding: 8px 22px;
+    font-size: 19px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+/* Hover 3ala links */
+.nav-links a:hover {
+    color: #fff;
+    background: rgba(212, 175, 55, 0.25);
+}
+
+/* Active link */
+.nav-links a.active {
+    background: rgba(212, 175, 55, 0.85);
+    color: #111;
+}
+
+/* Hero section */
+.hero {
+    flex: 1;
+    min-height: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Main title */
+.brand-title h1 {
+    font-size: clamp(52px, 10vw, 95px);
+    color: #d4af37;
+    margin-bottom: 8px;
+    text-shadow: 0 0 22px rgba(212, 175, 55, 0.35);
+    text-align: center; /* لضمان التوسط الدائم للعنوان */
+}
+
+/* Subtitle */
+.brand-title p {
+    font-size: clamp(18px, 3vw, 26px);
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.82);
+    text-align: center; /* لضمان التوسط الدائم للعنوان الفرعي */
+}
+
+/* Button link */
+.cta-link {
+    text-decoration: none;
+}
+
+/* Main button */
+.cta-button {
+    margin-top: 60px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 12px 14px 12px 35px;
+    border-radius: 50px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    cursor: pointer;
+    backdrop-filter: blur(15px);
+    font-size: 20px;
+    transition: 0.3s;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Button hover */
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Icon circle */
+.icon-circle {
+    background: #c2b280;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Icon image */
+.icon-circle img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* Footer */
+.footer, .footer p {
+    padding: 18px;
+    text-align: center !important; /* إجبار الفوتر ونصوصه على التوسط دائمًا */
+    color: rgba(212, 175, 55, 0.7);
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 4px 0;
+}
+
+/* Tablet responsive */
+@media (max-width: 992px) {
+    .hero {
+        min-height: 560px;
+    }
+
+    .brand-title h1 {
+        font-size: 70px;
+    }
+}
+
+/* Mobile responsive + hamburger */
+@media (max-width: 768px) {
+    .top-right-logo {
+        right: 22px;
+        top: 22px;
+        font-size: 23px;
+    }
+
+    .navbar {
+        padding-top: 70px;
+    }
+
+    .nav-header {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 85%;
+        margin: auto;
+        border-radius: 20px;
+        padding: 15px;
+        gap: 5px;
+        background: rgba(0, 0, 0, 0.8);
+        border: 1px solid #d4af37;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center !important; /* التوسط للمنيو في الشاشات الصغيرة */
+        padding: 10px;
+        font-size: 18px;
+        flex: 1;
+    }
+
+    .hero {
+        min-height: 520px;
+        padding: 35px 16px;
+    }
+
+    .brand-title h1 {
+        font-size: 50px;
+    }
+
+    .brand-title p {
+        font-size: 17px;
+        letter-spacing: 1px;
+    }
+
+    .cta-button {
+        margin-top: 45px;
+        font-size: 17px;
+        padding: 10px 12px 10px 25px;
+        gap: 15px;
+    }
+
+    .icon-circle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .footer, .footer p {
+        font-size: 12px;
+        padding: 15px;
+        text-align: center !important;
+    }
+}
+
+/* Small mobile responsive */
+@media (max-width: 420px) {
+    .nav-links a {
+        font-size: 14px;
+        padding: 7px 8px;
+    }
+
+    .brand-title h1 {
+        font-size: 42px;
+    }
+
+    .brand-title p {
+        font-size: 15px;
+    }
+
+    .cta-button {
+        font-size: 15px;
+    }
+}

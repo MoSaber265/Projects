@@ -37,14 +37,14 @@ evaluate(rf_model, X_train_scaled, X_test_scaled, y_train, y_test, "Random Fores
 knn_model = train_knn(X_train_scaled, y_train)
 evaluate(knn_model, X_train_scaled, X_test_scaled, y_train, y_test, "KNN")
 
-# 4. User Interface (The Bonus)
+
 def predict_ui(hours, score):
-    # Apply same feature engineering as training
+    
     efficiency = score / hours if hours > 0 else 0
-    # Transform input using the trained scaler
+    
     features = np.array([[hours, score, efficiency]])
     features_scaled = scaler.transform(features)
-    # Prediction
+   
     prediction = rf_model.predict(features_scaled)[0]
     return "Status: PASS 🎉" if prediction == 1 else "Status: FAIL ❌"
 

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أَبَا الْقَاسِم - تسجيل الدخول</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/shared.css">
+
+    <style>
+        body, h2, label, input, button, span, a, p, div {
+            font-family: 'Amiri', serif !important;
+        }
+
+        /* ستايل زرار التخطي الظاهر في الصورة */
+        .skip-btn {
+            display: block;
+            margin: 15px auto;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 1px dashed rgba(212, 175, 55, 0.4);
+            padding: 8px 20px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+        .skip-btn:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: scale(1.05);
+        }
+        /* تنسيق رسائل الخطأ لتناسب التصميم الفخم */
+        .error-message {
+            color: #ff4d4d;
+            font-size: 14px;
+            margin-top: 6px;
+            padding-right: 15px; /* لتتماشى مع محاذاة النص لليمين */
+            text-align: right;
+            display: none; 
+        }
+        /* تمييز الحقل بحدود حمراء خفيفة عند وجود خطأ */
+        .input-wrapper.error-border {
+            border-color: #ff4d4d !important;
+            box-shadow: inset 0 4px 10px rgba(255, 77, 77, 0.1), 0 0 5px rgba(255, 77, 77, 0.2) !important;
+        }
+    </style>
+</head>
+
+<body class="login-page">
+
+    <div class="top-right-logo">أَصَالَة</div>
+
+    <nav class="navbar">
+        <div class="nav-header">
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="Home.html">الرئيسية</a>
+            <a href="product1.html">المنتجات</a>
+            <a href="contact.html">اتصل بنا</a>
+        </div>
+    </nav>
+
+    <main class="login-container">
+        <div class="login-card">
+            <h2>تسجيل الدخول</h2>
+            <p class="subtitle">ENTER YOUR SANCTUARY OF SCENT</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">البريد الإلكتروني / الهاتف</label>
+                    <div class="input-wrapper" id="emailWrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="text" id="email" placeholder="ادخل الايميل او رقم الهاتف">
+                    </div>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">كلمة المرور</label>
+                    <div class="input-wrapper" id="passwordWrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="••••••••">
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    دخول
+                </button>
+            </form>
+
+            <div class="separator">أو</div>
+
+            <a href="product1.html" class="skip-btn">
+                تصفح كضيف (تخطي) <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            
+            <div class="register-link">
+                <span>ليس لديك حساب؟</span>
+                <a href="register.html">إنشاء حساب</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>ABA AL-QASIM HERITAGE PARFUMERIE</p>
+        <p>© 2026 أَبَا الْقَاسِم للعطور جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="../JS/main.js"></script>
+
+</body>
+</html>

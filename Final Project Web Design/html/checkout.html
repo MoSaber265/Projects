@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أَبَا الْقَاسِم - بيانات الشحن</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/shared.css">
+    
+    <style>
+        body, h1, h2, span, button, a, div, p, input, select {
+            font-family: 'Amiri', serif !important;
+        }
+        /* تنسيق مخصص للفورم الفخم */
+        .checkout-form {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 25px;
+            padding: 30px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: right;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .form-group label {
+            color: #d4af37;
+            font-size: 18px;
+        }
+        .form-group input, .form-group select {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: #fff;
+            padding: 12px 15px;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        .submit-checkout-btn {
+            background: rgba(212, 175, 55, 0.85);
+            color: #111;
+            border: none;
+            padding: 12px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .submit-checkout-btn:hover {
+            background: #d4af37;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-right-logo">أَصَالَة</div>
+
+    <nav class="navbar">
+        <div class="nav-header">
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="Home.html">الرئيسية</a>
+            <a href="product1.html" class="active">المنتجات</a>
+            <a href="contact.html">اتصل بنا</a>
+        </div>
+    </nav>
+
+    <main class="product-display">
+        <h2 class="category-title">إتمام عملية الشراء</h2>
+
+        <form class="checkout-form" id="checkoutForm">
+            <div class="form-group">
+                <label><i class="fa-solid fa-user"></i> الاسم بالكامل:</label>
+                <input type="text" id="custName" placeholder="أدخل اسمك الثلاثي" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-location-dot"></i> مكان التوصيل (العنوان):</label>
+                <input type="text" id="custAddress" placeholder="المحافظة، المدينة، الشارع" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-credit-card"></i> طريقة الدفع المفضلة:</label>
+                <select id="paymentMethod" required>
+                    <option value="" disabled selected>اختر طريقة الدفع</option>
+                    <option value="cod">الدفع عند الاستلام (COD)</option>
+                    <option value="card">بطاقة ائتمانية / فيزا</option>
+                    <option value="instapay">إنستا باي (Instapay)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-clock"></i> موعد التوصيل المتوقع:</label>
+                <select id="deliveryTime" required>
+                    <option value="" disabled selected>اختر الموعد المناسب لك</option>
+                    <option value="fast">شحن سريع (خلال 24 ساعة)</option>
+                    <option value="standard">شحن عادي (من 2 إلى 3 أيام)</option>
+                    <option value="weekend">التوصيل في عطلة نهاية الأسبوع</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-checkout-btn">تأكيد الطلب والشحن</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>ABA AL-QASIM HERITAGE PARFUMERIE</p>
+    </footer>
+
+    <script>
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('تم تسجيل بيانات الشحن بنجاح! شكراً لثقتكم في أَبَا الْقَاسِم.');
+            window.location.href = 'contact.html';
+        });
+    </script>
+    
+    <script src="../JS/main.js"></script>
+</body>
+</html>

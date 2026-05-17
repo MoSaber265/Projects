@@ -1,0 +1,226 @@
+/* ====================================================
+   shared.css — يتحمل في كل صفحات المشروع
+   يحتوي على: Page Transitions, Reveal Animations,
+   Hamburger fix, وتحسينات عامة
+   ==================================================== */
+
+
+/* --------------------------------------------------
+   1. Page Transition (انتقال سلس بين الصفحات)
+   -------------------------------------------------- */
+body.page-enter {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+body.page-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.page-exit {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+
+/* --------------------------------------------------
+   2. Scroll Reveal Animation
+   -------------------------------------------------- */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal-hidden.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --------------------------------------------------
+   3. Hamburger Menu — إصلاح شامل لكل الصفحات
+   -------------------------------------------------- */
+
+/* الزرار نفسه — بيظهر بس في الموبايل */
+.menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    font-size: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    font-family: 'Amiri', serif;
+}
+
+.menu-btn:hover {
+    background: rgba(212, 175, 55, 0.15);
+}
+
+/* الـ nav-header اللي بيحتوي الزرار */
+.nav-header {
+    display: none;
+}
+
+/* في الموبايل */
+@media (max-width: 768px) {
+
+    .nav-header {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+    /* القايمة مخفية افتراضياً */
+    .nav-links {
+        display: none !important;
+        flex-direction: column !important;
+        width: 88%;
+        margin: 0 auto;
+        border-radius: 20px;
+        padding: 12px;
+        gap: 4px;
+        background: rgba(5, 5, 5, 0.92) !important;
+        border: 1px solid rgba(212, 175, 55, 0.6) !important;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        animation: none;
+    }
+
+    /* لما تظهر */
+    .nav-links.show {
+        display: flex !important;
+        animation: menuSlideDown 0.3s ease forwards;
+    }
+
+    @keyframes menuSlideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center !important;
+        padding: 11px 10px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+
+    .nav-links a:hover {
+        background: rgba(212, 175, 55, 0.2);
+    }
+
+    .nav-links a.active {
+        background: rgba(212, 175, 55, 0.85);
+        color: #111;
+    }
+}
+
+
+/* --------------------------------------------------
+   4. Dots — قابلة للنقر مع hover effect
+   -------------------------------------------------- */
+.dot {
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.dot:hover:not(.active) {
+    background: rgba(212, 175, 55, 0.5);
+    transform: scale(1.2);
+}
+
+.dot.active {
+    transform: scale(1.1);
+}
+
+
+/* --------------------------------------------------
+   5. Buttons — تحسين عام
+   -------------------------------------------------- */
+.next-btn, .cart-btn, .payment-btn, .login-btn, .cta-button {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ripple effect عند الضغط */
+.next-btn::after, .cart-btn::after, .payment-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(212, 175, 55, 0.15);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: inherit;
+}
+
+.next-btn:active::after, .cart-btn:active::after, .payment-btn:active::after {
+    opacity: 1;
+}
+
+
+/* --------------------------------------------------
+   6. Toast — responsive
+   -------------------------------------------------- */
+#luxury-toast {
+    max-width: 90vw;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    #luxury-toast {
+        font-size: 15px !important;
+        padding: 12px 20px !important;
+        white-space: normal !important;
+    }
+}
+
+
+/* --------------------------------------------------
+   7. Scrollbar مخصص (اختياري، يبان على الكمبيوتر)
+   -------------------------------------------------- */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.4);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.7);
+}
+
+
+/* --------------------------------------------------
+   8. Selection color (لون التحديد بالماوس)
+   -------------------------------------------------- */
+::selection {
+    background: rgba(212, 175, 55, 0.35);
+    color: #fff;
+}

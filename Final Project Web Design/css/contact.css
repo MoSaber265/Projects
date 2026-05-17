@@ -1,0 +1,298 @@
+/* Reset el page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Amiri', serif;
+}
+
+/* حل سحري وشامل لدعم خلط العربي والانجليزي والأرقام تلقائياً في كل الصفحات */
+span, p, a, div, h1, h2, h3, li, td {
+    unicode-bidi: plaintext;
+    text-align: right;
+}
+
+/* Body style */
+body {
+    background: radial-gradient(circle, #444 0%, #111 55%, #000 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Logo fo2 3al ymeen */
+.top-right-logo {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 28px;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    padding-top: 70px;
+    text-align: center;
+}
+
+/* Hamburger header */
+.nav-header {
+    display: none;
+}
+
+/* Hamburger button */
+.menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    font-size: 28px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Links container */
+.nav-links {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 50px;
+    padding: 6px 16px;
+    gap: 12px;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Navbar links */
+.nav-links a {
+    color: #ddd;
+    text-decoration: none;
+    padding: 8px 22px;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: 0.3s;
+    text-align: center !important; /* ضمان توسط نصوص اللينكات */
+}
+
+/* Hover 3ala links */
+.nav-links a:hover {
+    color: #fff;
+    background: rgba(212, 175, 55, 0.25);
+}
+
+/* Active link */
+.nav-links a.active {
+    background: rgba(212, 175, 55, 0.85);
+    color: #111;
+}
+
+/* Contact section */
+.contact-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* Page title */
+.page-title {
+    font-size: 48px;
+    margin-bottom: 50px;
+    color: #fff;
+    text-align: center !important; /* الاحتفاظ بعنوان الصفحة بالمنتصف */
+}
+
+/* Contact methods container */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    max-width: 430px;
+}
+
+/* Contact item */
+.contact-item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+/* لضمان ثبات اتجاه النصوص داخل قائمة الاتصال وعدم انقلاب ترتيب الأيقونة مع الرقم */
+.contact-item .contact-text {
+    font-size: 24px;
+    letter-spacing: 1px;
+    unicode-bidi: plaintext;
+}
+
+/* Icon circle */
+.icon-circle {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    border: 2px solid #d4af37;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Icon colors */
+.whatsapp i {
+    color: #25D366;
+}
+
+.instagram i {
+    color: #E1306C;
+}
+
+.facebook i {
+    color: #1877F2;
+}
+
+/* Closing message */
+.closing-message {
+    margin-top: 60px;
+    font-size: 28px;
+    color: #d4af37;
+    line-height: 1.7;
+    opacity: 0.9;
+    text-align: center !important; /* الحفاظ على الرسالة الختامية في المنتصف */
+}
+
+/* Footer */
+.footer, .footer p {
+    padding: 18px;
+    text-align: center !important; /* الحفاظ على الفوتر في المنتصف دائمًا */
+    color: rgba(212, 175, 55, 0.7);
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 4px 0;
+}
+
+/* Tablet responsive */
+@media (max-width: 992px) {
+    .page-title {
+        font-size: 42px;
+    }
+
+    .closing-message {
+        font-size: 24px;
+    }
+}
+
+/* Mobile responsive + hamburger */
+@media (max-width: 768px) {
+    .top-right-logo {
+        right: 22px;
+        top: 22px;
+        font-size: 23px;
+    }
+
+    .navbar {
+        padding-top: 70px;
+    }
+
+    .nav-header {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 85%;
+        margin: auto;
+        border-radius: 20px;
+        padding: 15px;
+        gap: 5px;
+        background: rgba(0, 0, 0, 0.85);
+        border: 1px solid #d4af37;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center !important;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .contact-container {
+        padding: 25px 15px;
+    }
+
+    .page-title {
+        font-size: 36px;
+        margin-bottom: 35px;
+    }
+
+    .contact-methods {
+        max-width: 350px;
+        gap: 22px;
+    }
+
+    .contact-item {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .contact-text {
+        font-size: 19px;
+    }
+
+    .icon-circle {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+    }
+
+    .closing-message {
+        margin-top: 45px;
+        font-size: 20px;
+    }
+
+    .footer, .footer p {
+        font-size: 12px;
+        text-align: center !important;
+    }
+}
+
+/* Small mobile responsive */
+@media (max-width: 420px) {
+    .page-title {
+        font-size: 32px;
+    }
+
+    .contact-text {
+        font-size: 17px;
+    }
+
+    .closing-message {
+        font-size: 18px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+}
